@@ -3,42 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Yuya Style</title>
+    <title>Portfolio | [Your Name]</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
+    <div class="layout-wrapper">
         <aside class="sidebar">
-            <div class="profile">
-                <div class="avatar"></div>
-                <h1>Your Name</h1>
-                <p class="tagline">University Student & Researcher</p>
+            <div class="profile-top">
+                <div class="avatar-circle"></div>
+                <h1>[Your Name]</h1>
+                <p>University Student</p>
             </div>
-            <nav>
-                <a href="#home" class="active">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#research">Research</a>
-                <a href="#hobbies">Hobbies</a>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#projects" class="nav-item">Projects</a>
+                <a href="#research" class="nav-item">Research</a>
+                <a href="#hobbies" class="nav-item">Hobbies & Media</a>
             </nav>
-            <div class="footer-note">Available for 2024 Internships</div>
+
+            <div class="status-badge">
+                <span class="dot"></span> Open for Internships
+            </div>
         </aside>
 
-        <main class="content">
-            <section id="home" class="bento-hero">
-                <div class="bento-box large">
-                    <h2>Hello! I'm a student at [University] focusing on [Major].</h2>
+        <main class="content-area">
+            
+            <section id="home" class="bento-section">
+                <div class="bento-card hero-card">
+                    <h2>I’m a student researcher building digital experiences and exploring [Field of Study].</h2>
                 </div>
             </section>
 
             <section id="projects">
-                <h3 class="section-label">Selected Projects</h3>
+                <p class="section-label">Selected Projects</p>
                 <div class="bento-grid">
-                    <div class="bento-box project-card">Project One</div>
-                    <div class="bento-box project-card">Project Two</div>
-                    <div class="bento-box project-card wide">Project Three (Featured)</div>
+                    <div class="bento-card project">
+                        <h3>Project Alpha</h3>
+                        <p>Web development</p>
+                    </div>
+                    <div class="bento-card project">
+                        <h3>Project Beta</h3>
+                        <p>UI Design</p>
+                    </div>
                 </div>
             </section>
+
+            <section id="research">
+                <p class="section-label">Academic Research</p>
+                <div class="bento-card wide">
+                    <h3>Analysis of [Your Topic]</h3>
+                    <p>Published in [Journal/University Press] — An exploration of data trends in modern tech.</p>
+                </div>
+            </section>
+
+            <section id="hobbies">
+                <p class="section-label">Hobbies & Media</p>
+                <div class="bento-grid">
+                    <div class="bento-card hobby">📸 Photography</div>
+                    <div class="bento-card hobby">📚 Reading List</div>
+                </div>
+            </section>
+
         </main>
     </div>
 
