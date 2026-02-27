@@ -7,7 +7,11 @@
     --radius: 32px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--bg-color);
@@ -43,7 +47,9 @@ body {
     margin-bottom: 20px;
 }
 
-.nav-menu { margin-top: 40px; }
+.nav-menu {
+    margin-top: 40px;
+}
 
 .nav-item {
     display: block;
@@ -55,10 +61,14 @@ body {
     transition: color 0.3s;
 }
 
-.nav-item:hover { color: var(--text-main); }
+.nav-item:hover {
+    color: var(--text-main);
+}
 
-/* Bento Grid Layout */
-.content-area { flex: 1; }
+/* Content */
+.content-area {
+    flex: 1;
+}
 
 .section-label {
     font-size: 0.75rem;
@@ -69,18 +79,44 @@ body {
     letter-spacing: 1px;
 }
 
+/* ✅ LINK WRAPPER FIX */
+.bento-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Bento Cards */
 .bento-card {
     background: var(--card-color);
     border-radius: var(--radius);
     padding: 40px;
     margin-bottom: 20px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
 }
 
-.bento-card:hover { transform: translateY(-5px); }
+/* Hover & Focus States */
+.bento-link:hover .bento-card,
+.bento-link:focus-visible .bento-card {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
 
-.hero-card h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; }
+/* Keyboard accessibility */
+.bento-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+    border-radius: var(--radius);
+}
+
+/* Typography */
+.hero-card h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
 
 .bento-grid {
     display: grid;
@@ -88,9 +124,11 @@ body {
     gap: 20px;
 }
 
-.wide { grid-column: span 2; }
+.wide {
+    grid-column: span 2;
+}
 
-/* Status Badge Decoration */
+/* Status Badge */
 .status-badge {
     font-size: 0.85rem;
     font-weight: 600;
@@ -111,9 +149,20 @@ body {
     box-shadow: 0 0 8px #34c759;
 }
 
-/* Responsive adjustment */
+/* Responsive */
 @media (max-width: 850px) {
-    .layout-wrapper { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: relative; top: 0; }
-    .bento-grid { grid-template-columns: 1fr; }
+    .layout-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
 }
