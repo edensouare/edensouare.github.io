@@ -40,9 +40,12 @@ Editing content:
 - Update lists in `src/content.js` to add/remove items for Projects/Research.
 - For richer detail pages, extend `content.js` with fields (e.g., images, sections) and render them in `pages/ProjectDetail.jsx`.
 
-Legacy URLs preserved:
-- Old files like `lookism.html`, `meal-hopper.html`, etc., now contain meta-refresh redirects to the corresponding React routes, so existing links won’t break.
+Legacy URLs preserved (no extra files needed):
+- Legacy paths like `/lookism.html`, `/alzheimers-mri.html`, etc., are handled by React Router redirects defined in `src/App.jsx`.
+- On GitHub Pages, the workflow copies `dist/index.html` to `dist/404.html`, so direct visits to those legacy `.html` URLs load the SPA and you’re redirected to the new routes (e.g., `/projects/lookism`).
+- The old standalone HTML redirect files were removed to keep the repo clean.
 
 Notes:
 - If you host at `https://<username>.github.io/` (user site), the Vite `base` is already set to `/` and everything should resolve correctly.
-- If you move this app into a project page (e.g., `https://<username>.github.io/<repo>`), update `vite.config.js` `base` to `'/<repo>/'` and adjust the meta-redirects accordingly.
+- If you move this app into a project page (e.g., `https://<username>.github.io/<repo>`), update `vite.config.js` `base` to `'/<repo>/'`.
+- Cleanup: the inspiration folder `SBleeyouk.github.io-main` and unused static files (legacy `.html` redirects, root `style.css`) were removed.
