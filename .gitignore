@@ -1,0 +1,13 @@
+# Node/Vite artifacts in sub-project
+edensouare.github.io-main/node_modules/
+edensouare.github.io-main/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
