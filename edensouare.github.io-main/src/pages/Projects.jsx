@@ -10,7 +10,9 @@ export default function Projects() {
         {projects.map(p => (
           <Link key={p.slug} to={`/projects/${p.slug}`} className="bento-link col-span-4">
             <div className="bento-card project">
-              <h3>{p.title}</h3>
+              <h3>
+                {p.title} {p.year && <span className="title-year">/{p.year}</span>}
+              </h3>
               <p>{p.subtitle}</p>
             </div>
           </Link>

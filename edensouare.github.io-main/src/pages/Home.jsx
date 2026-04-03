@@ -9,8 +9,8 @@ export default function Home() {
       <section id="home" className="bento-section">
         <div className="bento-card hero-card">
           <h2>
-            Hello, my name is Eden. I’m a Cognitive Science and Computer Science student specializing
-            in UX Research, HCI, and ML to build digital experiences.
+              Hello, I’m Eden, a Cognitive Science and Computer Science student designing human-centered digital systems.
+              I work at the intersection of UX Research, Human-Computer Interaction, and Machine Learning to understand how people think, trust, and interact with technology.
           </h2>
         </div>
       </section>

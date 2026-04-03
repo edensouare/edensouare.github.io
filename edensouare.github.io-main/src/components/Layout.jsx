@@ -1,15 +1,31 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 export default function Layout({ children }) {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
   return (
     <div className="layout-wrapper">
       <aside className="sidebar">
         <div>
           <div className="profile-top">
-            <div className="avatar-circle" aria-hidden="true"></div>
-            <h1 style={{ fontSize: '1.5rem', marginBottom: 4 }}>Eden Souare</h1>
-            <p className="text-muted">University Student</p>
+            {isHome ? (
+              <>
+                <img
+                  className="avatar-rect"
+                  src="/profile.jpg"
+                  alt="Portrait of Eden Souare"
+                  loading="lazy"
+                />
+                <h1 style={{ fontSize: '1.5rem', marginTop: 12, marginBottom: 4 }}>Eden Souare</h1>
+                <p className="text-muted">University Student</p>
+              </>
+            ) : (
+              <>
+                <h1 style={{ fontSize: '1.5rem', marginBottom: 4 }}>Eden Souare</h1>
+                <p className="text-muted">University Student</p>
+              </>
+            )}
           </div>
 
           <nav className="nav-menu" aria-label="Primary">

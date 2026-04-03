@@ -10,7 +10,9 @@ export default function Research() {
         {research.map(r => (
           <Link key={r.slug} to={`/research/${r.slug}`} className="bento-link col-span-12">
             <div className="bento-card wide">
-              <h3>{r.title}</h3>
+              <h3>
+                {r.title} {r.year && <span className="title-year">/{r.year}</span>}
+              </h3>
               <p>{r.subtitle}</p>
             </div>
           </Link>
