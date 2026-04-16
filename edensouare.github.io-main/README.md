@@ -1,13 +1,5 @@
 ### edensouare.github.io — React + Vite SPA
 
-This project converts the static site into a modern React app powered by Vite, inspired by the structure and interactions from `SBleeyouk.github.io`.
-
-What you get:
-- React + Vite setup with fast local dev and optimized prod build
-- Client-side routing with animated transitions (Framer Motion)
-- Clean layout and bento-style cards carried over from the original design
-- GitHub Pages deployment via GitHub Actions (including SPA deep-link support)
-
 Folder layout (relevant bits):
 - `src/` — React application
   - `main.jsx` — entry point
@@ -15,7 +7,7 @@ Folder layout (relevant bits):
   - `components/Layout.jsx` — sidebar + shell
   - `pages/` — `Home.jsx`, `Projects.jsx`, `Research.jsx`, `ProjectDetail.jsx`
   - `content.js` — simple data for projects/research
-  - `index.css` — global styles (ported from the previous `style.css`)
+  - `index.css` — global styles
 
 How to run locally:
 1. Install Node.js 18+ (20 recommended).
@@ -48,4 +40,3 @@ Legacy URLs preserved (no extra files needed):
 Notes:
 - If you host at `https://<username>.github.io/` (user site), the Vite `base` is already set to `/` and everything should resolve correctly.
 - If you move this app into a project page (e.g., `https://<username>.github.io/<repo>`), update `vite.config.js` `base` to `'/<repo>/'`.
-- Cleanup: the inspiration folder `SBleeyouk.github.io-main` and unused static files (legacy `.html` redirects, root `style.css`) were removed.
