@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Layout from './components/Layout'
+import WelcomeMenu from './components/WelcomeMenu'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Research from './pages/Research'
@@ -33,7 +34,8 @@ export default function App() {
     <Layout>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Page><Home /></Page>} />
+          <Route path="/" element={<WelcomeMenu />} />
+          <Route path="/home" element={<Page><Home /></Page>} />
           <Route path="/projects" element={<Page><Projects /></Page>} />
           <Route path="/research" element={<Page><Research /></Page>} />
           <Route path="/projects/:slug" element={<Page><ProjectDetail /></Page>} />
