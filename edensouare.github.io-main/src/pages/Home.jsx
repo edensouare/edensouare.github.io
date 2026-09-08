@@ -1,49 +1,100 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { projects, research } from '../content'
+
+const academicHubLetters = 'Academic hub'.split('')
+
+function findFemaleVoice(voices) {
+  return voices.find(voice => /child|kid|junior/i.test(voice.name))
+    || voices.find(voice => /female|samantha|victoria|karen|zira|moira|susan|ava|allison|siri/i.test(voice.name))
+    || voices.find(voice => /en[-_]/i.test(voice.lang))
+    || voices[0]
+}
+
+function speakLetter(letter, voices) {
+  if (!('speechSynthesis' in window) || letter === ' ') return
+  window.speechSynthesis.cancel()
+  const utterance = new SpeechSynthesisUtterance(letter)
+  const femaleVoice = findFemaleVoice(voices)
+  if (femaleVoice) utterance.voice = femaleVoice
+  utterance.rate = 1
+  utterance.pitch = 1.05
+  window.speechSynthesis.speak(utterance)
+}
 
 export default function Home() {
+  const voices = useRef([])
+
+  useEffect(() => {
+    if (!('speechSynthesis' in window)) return undefined
+    const updateVoices = () => { voices.current = window.speechSynthesis.getVoices() }
+    updateVoices()
+    window.speechSynthesis.addEventListener('voiceschanged', updateVoices)
+    return () => {
+      window.speechSynthesis.cancel()
+      window.speechSynthesis.removeEventListener('voiceschanged', updateVoices)
+    }
+  }, [])
+
+  const stopSpeech = () => window.speechSynthesis?.cancel()
+
   return (
-    <div>
-      {/* HERO */}
-      <section id="home" className="bento-section">
-        <div className="bento-card hero-card">
-          <h2>
-              Hello, I’m Eden, a Cognitive Science and Computer Science student designing human-centered digital systems.
-              I work at the intersection of UX Research, Human-Computer Interaction, and Machine Learning to understand how people think, trust, and interact with technology.
+    <div className="about-page">
+      <header className="about-banner">
+        <div className="about-banner-overlay">
+          <p className="section-label">edenet</p>
+          <h2 className="speech-title" aria-label="Academic hub">
+            {academicHubLetters.map((letter, index) => (
+              <span
+                key={`${letter}-${index}`}
+                className={letter === ' ' ? 'speech-letter speech-space' : 'speech-letter'}
+                aria-hidden="true"
+                onMouseEnter={() => speakLetter(letter, voices.current)}
+                onMouseLeave={stopSpeech}
+              >
+                {letter === ' ' ? '\u00a0' : letter}
+              </span>
+            ))}
           </h2>
+          <p>A small archive of ideas, experiments, and human-centered systems.</p>
         </div>
-      </section>
+      </header>
 
-      {/* PROJECTS */}
-      <section id="projects" style={{ marginTop: 28 }}>
-        <p className="section-label">Selected Projects</p>
-        <div className="bento-grid" style={{ marginTop: 10 }}>
-          {projects.map(p => (
-            <Link key={p.slug} to={`/projects/${p.slug}`} className="bento-link col-span-4">
-              <div className="bento-card project">
-                <h3>{p.title}</h3>
-                <p>{p.subtitle}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <div className="about-layout">
+        <main className="about-main">
+          <p className="section-label">About</p>
+          <h1>Welcome to my corner of the internet.</h1>
+          <p><strong>Hello, I'm Eden, a Cognitive Science and Computer Science student.</strong></p>
+          <p>I design human-centered digital systems at the intersection of UX Research, Human-Computer Interaction, and Machine Learning. My work asks how people think, build trust, and make meaning while interacting with technology.</p>
+          <p>I care about thoughtful interfaces, accessible experiences, and research that turns complicated questions into useful, everyday tools.</p>
+          <p>Browse the <Link to="/projects">projects</Link> and <Link to="/research">research</Link> pages to see the work showcased on this website.</p>
 
-      {/* RESEARCH */}
-      <section id="research" style={{ marginTop: 40 }}>
-        <p className="section-label">Academic Research</p>
-        <div className="bento-grid" style={{ marginTop: 10 }}>
-          {research.map(r => (
-            <Link key={r.slug} to={`/research/${r.slug}`} className="bento-link col-span-12">
-              <div className="bento-card wide">
-                <h3>{r.title}</h3>
-                <p>{r.subtitle}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+          <section className="about-note">
+            <p className="section-label">Currently exploring</p>
+            <p>Interfaces that feel clear, curious, and a little more human. This space will keep changing as new experiments and ideas find their way in.</p>
+          </section>
+        </main>
+
+        <aside className="about-sidebar">
+          <h2>Updates</h2>
+          <div className="about-box">
+            <p>This portfolio is an evolving collection of my work.</p>
+            <ul>
+              <li>Projects in UX and interaction design</li>
+              <li>Research in HCI and machine learning</li>
+              <li>Notes from ongoing experiments</li>
+            </ul>
+          </div>
+
+          <h2>Explore</h2>
+          <ul className="about-links">
+            <li><Link to="/projects">Selected projects</Link></li>
+            <li><Link to="/research">Academic research</Link></li>
+            <li><a href="mailto:edensouare@gmail.com">Get in touch</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <footer className="about-footer">edenet / 2026</footer>
     </div>
   )
 }

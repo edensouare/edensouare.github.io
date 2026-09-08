@@ -11,18 +11,18 @@ export default function Layout({ children }) {
         <div>
           <div className="profile-top">
             <h1>Eden Souare</h1>
-            <p className="text-muted">University Student</p>
+            <p className="text-muted">Exploring ML, HCI, and UX📍Dallas, Texas, USA</p>
           </div>
 
           <nav className="nav-menu" aria-label="Primary">
-            <NavLink to="/home" end className="nav-item">Home</NavLink>
+            <NavLink to="/home" end className="nav-item">About</NavLink>
             <NavLink to="/projects" className="nav-item">Projects</NavLink>
             <NavLink to="/research" className="nav-item">Research</NavLink>
           </nav>
         </div>
 
         <div className="status-badge" aria-live="polite">
-          <span className="dot" aria-hidden="true"></span> Open for Internships
+          <span className="dot" aria-hidden="true"></span> Open for Work
         </div>
       </aside>
 

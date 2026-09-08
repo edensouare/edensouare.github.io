@@ -87,6 +87,113 @@ body {
 
 .content-area { flex: 1; }
 
+.about-page { max-width: 900px; margin: 0 auto; }
+
+.about-banner {
+  min-height: 190px;
+  display: flex;
+  align-items: end;
+  margin-bottom: 10px;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(37, 43, 52, 0.08), rgba(127, 200, 248, 0.28)),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.76), rgba(217, 197, 223, 0.62));
+  box-shadow: 0 8px 24px rgba(31, 40, 52, 0.1);
+  overflow: hidden;
+}
+
+.about-banner-overlay { padding: 28px; }
+.about-banner .section-label { margin: 0 0 8px; }
+.about-banner h2 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; }
+.speech-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 110px;
+  line-height: 142px;
+  letter-spacing: -7.25333px;
+  color: transparent;
+  background: linear-gradient(135deg, #d9dde2 0%, #aeb5bd 50%, #c8cdd3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 1px 1px rgba(37, 43, 52, 0.2);
+}
+
+.speech-letter {
+  display: inline-block;
+  color: transparent;
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  cursor: help;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.speech-letter:hover {
+  color: #b9a7d6;
+  background: none;
+  transform: translateY(-3px);
+  text-shadow: 0 0 12px rgba(185, 167, 214, 0.8);
+}
+
+.speech-space { cursor: default; }
+.about-banner p:last-child { margin-top: 8px; color: var(--text-secondary); }
+
+.about-layout {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+
+.about-main {
+  flex: 1;
+  order: 2;
+  min-width: 0;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 8px 24px rgba(31, 40, 52, 0.1);
+}
+
+.about-main .section-label { margin: 0 0 12px; }
+.about-main h1 { font-size: clamp(1.6rem, 4vw, 2.35rem); line-height: 1.15; margin-bottom: 20px; }
+.about-main p { margin-top: 16px; }
+.about-main strong { color: var(--text-main); }
+.about-main a, .about-sidebar a { color: var(--text-main); font-weight: 700; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+
+.about-note {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(37, 43, 52, 0.16);
+}
+
+.about-note .section-label { margin: 0; }
+.about-note p:last-child { color: var(--text-secondary); }
+
+.about-sidebar {
+  order: 1;
+  width: 200px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: rgba(217, 197, 223, 0.52);
+}
+
+.about-sidebar h2 { font-size: 1.15rem; margin-bottom: 12px; }
+.about-sidebar h2:not(:first-child) { margin-top: 26px; }
+.about-box { padding: 14px; border: 1px solid rgba(127, 200, 248, 0.7); border-radius: 12px; background: rgba(255, 255, 255, 0.42); font-size: 0.85rem; }
+.about-sidebar ul { padding-left: 18px; }
+.about-box ul { margin-top: 12px; }
+.about-box li + li, .about-links li + li { margin-top: 8px; }
+.about-links { list-style: none; padding-left: 0 !important; font-size: 0.9rem; }
+
+.about-footer {
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  background: rgba(37, 43, 52, 0.78);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 .section-label {
   font-size: 0.75rem;
   font-weight: 800;
@@ -158,6 +265,17 @@ body {
   .bento-grid { grid-template-columns: repeat(6, 1fr); }
   .col-span-4 { grid-column: span 6; }
   .col-span-6 { grid-column: span 6; }
+  .about-layout { flex-direction: column; }
+  .about-main { order: 1; width: 100%; }
+  .about-sidebar { order: 2; width: 100%; }
+}
+
+@media (max-width: 560px) {
+  .speech-title {
+    font-size: clamp(3.5rem, 18vw, 6.875rem);
+    line-height: 1.15;
+    letter-spacing: -0.08em;
+  }
 }
 
 /* --- Detail pages (Project/Research) custom styling --- */
