@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 export default function Layout({ children }) {
   const location = useLocation()
@@ -7,11 +7,14 @@ export default function Layout({ children }) {
 
   return (
     <div className="layout-wrapper">
+      <Link className="welcome-back-button" to="/" aria-label="Back to Welcome Menu">
+        ← Welcome Menu
+      </Link>
       <aside className="sidebar">
         <div>
           <div className="profile-top">
             <h1>Eden Souare</h1>
-            <p className="text-muted">Exploring ML, HCI, and UX📍Dallas, Texas, USA</p>
+            <p className="text-muted">Exploring UX, HCI, and ML📍Dallas, Texas, USA</p>
           </div>
 
           <nav className="nav-menu" aria-label="Primary">

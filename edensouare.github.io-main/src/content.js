@@ -131,6 +131,61 @@ export const projects = [
     ],
   },
   {
+    slug: 'comet-bites',
+    title: 'Comet Bites',
+    subtitle: 'Design Research Methods UX Project',
+    year: '2026',
+    header: 'Helping students at UT Dallas find free and affordable food in real time',
+    tags: ['UX/UI', 'UX Research', 'App', 'Figma', 'A/B Testing', '5 Sec Test'],
+    role: [
+      'UX Researcher conducting 5-second tests and A/B tests to validate navigation and screen clarity',
+      'Interaction Designer shaping user flows, MVP scope, and mid-to-high fidelity wireframes in Figma',
+    ],
+    credits: [
+      'Karlie Ulloa',
+      'Nu Nguyen',
+      'Advised by Isi Barreiro',
+    ],
+    motivation: [
+      "Food insecurity among college students is rarely just about cost. Through early research, we found that students often don't know where to find affordable or free food nearby, and when resources do exist, information is scattered, outdated, or hard to access.",
+      'Beyond visibility, there is a quieter barrier: stigma. Students frequently feel embarrassed using campus food resources or are unsure whether they even qualify for support, which keeps them from seeking help even when it\'s available.',
+      'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food support rather than adding another app to compare and track.',
+      'This project set out to answer a practical question: how might we help UTD students locate free or affordable food in real time, without the friction, confusion, or discomfort that currently stands in the way?',
+    ],
+    images: Array.from({ length: 10 }, (_, index) => `CB${index + 1}.jpg`),
+    prototypeUrl: 'https://www.figma.com/proto/dDmZUTQK5K09C6DkTat301/Comet-Bites?node-id=109-873&p=f&t=jfpIVD3T66bIsQlw-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=109%3A873&show-proto-sidebar=1',
+    approach: [
+      {
+        heading: 'Problem Definition & Research Synthesis',
+        text: 'We grounded the project in research evidence before designing anything. Findings showed students skip meals near the end of the month, feel embarrassed using campus food resources, remain unsure about eligibility and support options, and often resort to comparing prices across multiple apps just to get by. These insights shaped every decision that followed.',
+      },
+      {
+        heading: 'MVP Scoping with Impact & Effort Prioritization',
+        text: 'Using an impact and effort matrix, we identified which features delivered the most value with the least complexity. High-impact, low-effort features—like a food pantry locator, live availability map, and traffic-light stock status—were prioritized for the MVP, while features like budget tracking and social/community tools were intentionally excluded to keep the experience focused on the core need: finding food quickly.',
+      },
+      {
+        heading: 'Feature-Driven User Flows',
+        text: 'We mapped three core features—Real-Time Availability, an Information Center, and Community Reports—each tied to a specific user goal and rationale. Detailed user flows, such as locating the Comet Cupboard for available food, traced every decision point from opening the app to arriving at a location, ensuring the experience stayed clear and low-friction at each step.',
+      },
+      {
+        heading: 'Mid-to-High Fidelity Wireframing',
+        text: 'We iterated through wireframes in Figma, refining screens like the live map, location updates, and community reporting flow. Each version clarified how users select a food availability status (Plenty, Low, Empty) and submit updates, moving the interface from a rough structure to a polished, intuitive flow.',
+      },
+      {
+        heading: '5-Second Testing & A/B Testing',
+        text: 'We ran 5-second tests to check whether users could immediately grasp the purpose of key screens, such as the Community Page. Results showed users understood its connection to food and pantry updates, but that action labels needed to be more direct. We paired this with A/B testing to compare design variations, learning that users consistently preferred layouts with real-time context, simple status labels, and clear location information.',
+      },
+      {
+        heading: 'Iteration Based on Testing Insights',
+        text: 'Testing directly shaped our final design decisions. We rewrote vague action labels like "Post" into clearer, task-specific wording such as "Report Available Food," and made real-time availability more visually prominent so students could make confident decisions faster.',
+      },
+      {
+        heading: 'Reflection & Future Growth',
+        text: 'With more time, we would focus on improving real-time data accuracy, expanding food event reporting, and testing with a larger, more diverse group of UTD students to further validate and refine the experience.',
+      },
+    ],
+  },
+  {
     slug: 'seppit',
     title: 'Seppit',
     subtitle: 'Audio Stem Extraction Tool using ML',

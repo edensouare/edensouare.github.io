@@ -35,7 +35,7 @@ export default function WelcomeMenu() {
                 <path id="welcome-name-circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
               </defs>
               <text>
-                <textPath href="#welcome-name-circle"> edenet explorer </textPath>
+                <textPath href="#welcome-name-circle"> Eden-Net Explorer </textPath>
               </text>
             </svg>
             <span className="welcome-core-action">{isOpen ? 'close' : ' '}</span>

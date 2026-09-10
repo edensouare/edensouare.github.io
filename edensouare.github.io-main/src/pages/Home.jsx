@@ -41,7 +41,7 @@ export default function Home() {
     <div className="about-page">
       <header className="about-banner">
         <div className="about-banner-overlay">
-          <p className="section-label">edenet</p>
+          <p className="section-label">Eden-Net</p>
           <h2 className="speech-title" aria-label="Academic hub">
             {academicHubLetters.map((letter, index) => (
               <span
@@ -55,7 +55,7 @@ export default function Home() {
               </span>
             ))}
           </h2>
-          <p>A small archive of ideas, experiments, and human-centered systems.</p>
+          <p>A small archive of my ideas, experiments, and human-centered systems.</p>
         </div>
       </header>
 
@@ -70,7 +70,7 @@ export default function Home() {
 
           <section className="about-note">
             <p className="section-label">Currently exploring</p>
-            <p>Interfaces that feel clear, curious, and a little more human. This space will keep changing as new experiments and ideas find their way in.</p>
+            <p>Interfaces that can communicate dense information while maintaining visual & aesthetic appeal... This space will keep changing as new experiments and ideas find their way in.</p>
           </section>
         </main>
 
@@ -80,7 +80,7 @@ export default function Home() {
             <p>This portfolio is an evolving collection of my work.</p>
             <ul>
               <li>Projects in UX and interaction design</li>
-              <li>Research in HCI and machine learning</li>
+              <li>Research in HCI and Machine Learning</li>
               <li>Notes from ongoing experiments</li>
             </ul>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
         </aside>
       </div>
 
-      <footer className="about-footer">edenet / 2026</footer>
+      <footer className="about-footer">Eden-Net / 2026</footer>
     </div>
   )
 }

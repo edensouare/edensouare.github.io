@@ -93,6 +93,21 @@ export default function ProjectDetail({ isResearch = false }) {
           </div>
         )}
 
+        {/* Embedded prototype */}
+        {entry.prototypeUrl && (
+          <div className="detail-section">
+            <h3>Hi-fi Prototype</h3>
+            <div className="prototype-frame">
+              <iframe
+                src={`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(entry.prototypeUrl)}`}
+                title={`${entry.title} hi-fi prototype`}
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        )}
+
         {/* Approach */}
         {Array.isArray(entry.approach) && entry.approach.length > 0 && (
           <div className="detail-section">

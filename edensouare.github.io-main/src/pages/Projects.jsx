@@ -7,7 +7,9 @@ export default function Projects() {
     <div>
       <p className="section-label">Selected Projects</p>
       <div className="bento-grid" style={{ marginTop: 10 }}>
-        {projects.map(p => (
+        {[...projects].sort((a, b) => (
+          a.slug === 'comet-bites' ? -1 : b.slug === 'comet-bites' ? 1 : 0
+        )).map(p => (
           <Link key={p.slug} to={`/projects/${p.slug}`} className="bento-link col-span-4">
             <div className="bento-card project">
               <h3>
