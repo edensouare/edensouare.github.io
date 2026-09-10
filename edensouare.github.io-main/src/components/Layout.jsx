@@ -10,26 +10,25 @@ export default function Layout({ children }) {
       <Link className="welcome-back-button" to="/" aria-label="Back to Welcome Menu">
         ← Welcome Menu
       </Link>
-      <aside className="sidebar">
-        <div>
-          <div className="profile-top">
-            <h1>Eden Souare</h1>
-            <p className="text-muted">Exploring UX, HCI, and ML📍Dallas, Texas, USA</p>
-          </div>
 
-          <nav className="nav-menu" aria-label="Primary">
-            <NavLink to="/home" end className="nav-item">About</NavLink>
-            <NavLink to="/projects" className="nav-item">Projects</NavLink>
-            <NavLink to="/research" className="nav-item">Research</NavLink>
-          </nav>
-        </div>
+      <aside className="sidebar" aria-label="Site navigation">
+        <header className="profile-top">
+          <h1>Eden Souare</h1>
+          <p className="text-muted">Exploring UX, HCI, and ML📍Dallas, Texas, USA</p>
+        </header>
+
+        <nav className="nav-menu" aria-label="Primary">
+          <NavLink to="/home" end className="nav-item">About</NavLink>
+          <NavLink to="/projects" className="nav-item">Projects</NavLink>
+          <NavLink to="/research" className="nav-item">Research</NavLink>
+        </nav>
 
         <div className="status-badge" aria-live="polite">
           <span className="dot" aria-hidden="true"></span> Open for Work
         </div>
       </aside>
 
-      {children}
+      <main className="content-area">{children}</main>
     </div>
   )
 }

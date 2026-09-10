@@ -5,6 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Eden Souare — HCI, UX, and ML projects and research" />
     <title>Eden-Net</title>
+    <script type="text/javascript">
+      function tb8_makeArray(n) {
+        this.length = n;
+        return this.length;
+      }
+
+      tb8_messages = new tb8_makeArray(4);
+      tb8_messages[0] = "hello";
+      tb8_messages[1] = "welcome";
+      tb8_messages[2] = "to";
+      tb8_messages[3] = "eden-net";
+      tb8_rptType = 'infinite';
+      tb8_rptNbr = 5;
+      tb8_speed = 100;
+      tb8_delay = 2000;
+
+      var tb8_counter = 1;
+      var tb8_currMsg = 0;
+      var tb8_tekst = "";
+      var tb8_i = 0;
+      var tb8_TID = null;
+
+      function tb8_pisi() {
+        tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i + 1);
+        document.title = tb8_tekst;
+        tb8_sp = tb8_speed;
+        tb8_i++;
+
+        if (tb8_i == tb8_messages[tb8_currMsg].length) {
+          tb8_currMsg++;
+          tb8_i = 0;
+          tb8_tekst = "";
+          tb8_sp = tb8_delay;
+        }
+
+        if (tb8_currMsg == tb8_messages.length) {
+          if ((tb8_rptType == 'finite') && (tb8_counter == tb8_rptNbr)) {
+            clearTimeout(tb8_TID);
+            return;
+          }
+
+          tb8_counter++;
+          tb8_currMsg = 0;
+        }
+
+        tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+      }
+
+      tb8_pisi();
+    </script>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">

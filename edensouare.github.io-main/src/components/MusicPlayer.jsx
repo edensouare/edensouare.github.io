@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const trackList = [
+  { name: 'Lost In Cyberspace - Downhill2k01', path: 'https://files.catbox.moe/idzjuu.mp3' },
+  { name: 'City Moon - Love Spirals Downwards', path: 'https://files.catbox.moe/4fltlq.mp3' },
+  { name: 'Pancake - Swirlies', path: 'https://files.catbox.moe/miclu4.mp3' },
   { name: 'Brakhage - Stereolab', path: 'https://files.catbox.moe/dk8nyw.mp3' },
   { name: 'true perspective - lostrushi', path: 'https://files.catbox.moe/3lz6il.mp3' }
 ]

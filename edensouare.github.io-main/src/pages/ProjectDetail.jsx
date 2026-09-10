@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getEntryBySlug } from '../content'
 
@@ -6,9 +6,54 @@ export default function ProjectDetail({ isResearch = false }) {
   const { slug } = useParams()
   const entry = getEntryBySlug(slug)
 
+  useEffect(() => {
+    if (!slug || typeof window === 'undefined') return undefined
+
+    const jquerySrc = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+    const scriptId = 'scrolltotop-inline-script'
+    const noscriptId = 'scrolltotop-noscript'
+
+    const appendInlineScript = () => {
+      if (document.getElementById(scriptId)) return
+
+      const script = document.createElement('script')
+      script.id = scriptId
+      script.type = 'text/javascript'
+      script.textContent = `var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:1e3,fadeduration:[500,100]},controlHTML:'<img src="https://lh3.googleusercontent.com/pw/AM-JKLU78dKyQvhwE4C_b2ve9nCM_ISy3suvm1pufBsyx07_Ti2tel6lKAzu0bGpyYZM6ZdZ62UxiQ7jZ4CNA-KgijgrjoJUUzWN6s8PEl3Dua5BREcclrNCa4kmhN05z1k3TZu9emkB6slwdOMxqoavJppA=w48-h46-no" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:"#top",state:{isvisible:!1,shouldvisible:!1},scrollup:function(){this.cssfixedsupport||this.$control.css({opacity:0});var t=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);t="string"==typeof t&&1==jQuery("#"+t).length?jQuery("#"+t).offset().top:0,this.$body.animate({scrollTop:t},this.setting.scrollduration)},keepfixed:function(){var t=jQuery(window),o=t.scrollLeft()+t.width()-this.$control.width()-this.controlattrs.offsetx,s=t.scrollTop()+t.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:o+"px",top:s+"px"})},togglecontrol:function(){var t=jQuery(window).scrollTop();this.cssfixedsupport||this.keepfixed(),this.state.shouldvisible=t>=this.setting.startline?!0:!1,this.state.shouldvisible&&!this.state.isvisible?(this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]),this.state.isvisible=!0):0==this.state.shouldvisible&&this.state.isvisible&&(this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]),this.state.isvisible=!1)},init:function(){jQuery(document).ready(function(t){var o=scrolltotop,s=document.all;o.cssfixedsupport=!s||s&&"CSS1Compat"==document.compatMode&&window.XMLHttpRequest,o.$body=t(window.opera?"CSS1Compat"==document.compatMode?"html":"body":"html,body"),o.$control=t('<div id="topcontrol">'+o.controlHTML+"</div>").css({position:o.cssfixedsupport?"fixed":"absolute",bottom:o.controlattrs.offsety,right:o.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"Scroll to Top"}).click(function(){return o.scrollup(),!1}).appendTo("body"),document.all&&!window.XMLHttpRequest&&""!=o.$control.text()&&o.$control.css({width:o.$control.width()}),o.togglecontrol(),t('a[href="'+o.anchorkeyword+'"]').click(function(){return o.scrollup(),!1}),t(window).bind("scroll resize",function(t){o.togglecontrol()})})}};scrolltotop.init();`
+      document.body.appendChild(script)
+
+      if (!document.getElementById(noscriptId)) {
+        const noscript = document.createElement('noscript')
+        noscript.id = noscriptId
+        noscript.innerHTML = 'Not seeing a <a href="https://www.scrolltotop.com/">Scroll to Top Button</a>? Go to our FAQ page for more info.'
+        document.body.appendChild(noscript)
+      }
+    }
+
+    const existingJquery = document.querySelector(`script[src="${jquerySrc}"]`)
+    if (window.jQuery) {
+      appendInlineScript()
+      return undefined
+    }
+
+    if (existingJquery) {
+      existingJquery.addEventListener('load', appendInlineScript, { once: true })
+      return undefined
+    }
+
+    const jqueryScript = document.createElement('script')
+    jqueryScript.src = jquerySrc
+    jqueryScript.async = true
+    jqueryScript.defer = true
+    jqueryScript.onload = appendInlineScript
+    document.body.appendChild(jqueryScript)
+
+    return undefined
+  }, [slug, isResearch])
+
   if (!entry) {
     return (
-      <div className="bento-card">
+      <article className="bento-card">
         <h2 style={{ marginBottom: 8 }}>Not found</h2>
         <p className="text-muted">We couldn't find that {isResearch ? 'research' : 'project'} entry.</p>
         <div style={{ marginTop: 16 }}>
@@ -16,7 +61,7 @@ export default function ProjectDetail({ isResearch = false }) {
             ← Back to {isResearch ? 'Research' : 'Projects'}
           </Link>
         </div>
-      </div>
+      </article>
     )
   }
 

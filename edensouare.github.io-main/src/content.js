@@ -135,7 +135,7 @@ export const projects = [
     title: 'Comet Bites',
     subtitle: 'Design Research Methods UX Project',
     year: '2026',
-    header: 'Helping students at UT Dallas find free and affordable food in real time',
+    header: 'How might we help UTD students locate free or affordable food in real time?',
     tags: ['UX/UI', 'UX Research', 'App', 'Figma', 'A/B Testing', '5 Sec Test'],
     role: [
       'UX Researcher conducting 5-second tests and A/B tests to validate navigation and screen clarity',
@@ -147,10 +147,9 @@ export const projects = [
       'Advised by Isi Barreiro',
     ],
     motivation: [
-      "Food insecurity among college students is rarely just about cost. Through early research, we found that students often don't know where to find affordable or free food nearby, and when resources do exist, information is scattered, outdated, or hard to access.",
+      "About a quarter of students at UT Dallas face food insecurity, and it's not soley a financial issue. Through early research, we found that students often don't know where to find affordable or free food nearby, and when resources do exist, information is scattered, outdated, or hard to access.",
       'Beyond visibility, there is a quieter barrier: stigma. Students frequently feel embarrassed using campus food resources or are unsure whether they even qualify for support, which keeps them from seeking help even when it\'s available.',
-      'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food support rather than adding another app to compare and track.',
-      'This project set out to answer a practical question: how might we help UTD students locate free or affordable food in real time, without the friction, confusion, or discomfort that currently stands in the way?',
+      'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food rather than adding another app to compare and track.',
     ],
     images: Array.from({ length: 10 }, (_, index) => `CB${index + 1}.jpg`),
     prototypeUrl: 'https://www.figma.com/proto/dDmZUTQK5K09C6DkTat301/Comet-Bites?node-id=109-873&p=f&t=jfpIVD3T66bIsQlw-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=109%3A873&show-proto-sidebar=1',

@@ -38,7 +38,7 @@ export default function Home() {
   const stopSpeech = () => window.speechSynthesis?.cancel()
 
   return (
-    <div className="about-page">
+    <main className="about-page">
       <header className="about-banner">
         <div className="about-banner-overlay">
           <p className="section-label">Eden-Net</p>
@@ -55,12 +55,12 @@ export default function Home() {
               </span>
             ))}
           </h2>
-          <p>A small archive of my ideas, experiments, and human-centered systems.</p>
+          <p className="about-banner-copy">A small archive of my ideas, experiments, and human-centered systems.</p>
         </div>
       </header>
 
       <div className="about-layout">
-        <main className="about-main">
+        <article className="about-main">
           <p className="section-label">About</p>
           <h1>Welcome to my corner of the internet.</h1>
           <p><strong>Hello, I'm Eden, a Cognitive Science and Computer Science student.</strong></p>
@@ -72,29 +72,31 @@ export default function Home() {
             <p className="section-label">Currently exploring</p>
             <p>Interfaces that can communicate dense information while maintaining visual & aesthetic appeal... This space will keep changing as new experiments and ideas find their way in.</p>
           </section>
-        </main>
+        </article>
 
         <aside className="about-sidebar">
-          <h2>Updates</h2>
-          <div className="about-box">
+          <section className="about-box">
+            <h2>Updates</h2>
             <p>This portfolio is an evolving collection of my work.</p>
             <ul>
               <li>Projects in UX and interaction design</li>
               <li>Research in HCI and Machine Learning</li>
               <li>Notes from ongoing experiments</li>
             </ul>
-          </div>
+          </section>
 
-          <h2>Explore</h2>
-          <ul className="about-links">
-            <li><Link to="/projects">Selected projects</Link></li>
-            <li><Link to="/research">Academic research</Link></li>
-            <li><a href="mailto:edensouare@gmail.com">Get in touch</a></li>
-          </ul>
+          <section className="about-links-panel">
+            <h2>Explore</h2>
+            <ul className="about-links">
+              <li><Link to="/projects">Selected projects</Link></li>
+              <li><Link to="/research">Academic research</Link></li>
+              <li><a href="mailto:edensouare@gmail.com">Get in touch</a></li>
+            </ul>
+          </section>
         </aside>
       </div>
 
       <footer className="about-footer">Eden-Net / 2026</footer>
-    </div>
+    </main>
   )
 }
