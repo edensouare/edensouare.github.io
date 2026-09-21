@@ -160,11 +160,11 @@ export const projects = [
       },
       {
         heading: 'MVP Scoping with Impact & Effort Prioritization',
-        text: 'Using an impact and effort matrix, we identified which features delivered the most value with the least complexity. High-impact, low-effort features—like a food pantry locator, live availability map, and traffic-light stock status—were prioritized for the MVP, while features like budget tracking and social/community tools were intentionally excluded to keep the experience focused on the core need: finding food quickly.',
+        text: 'Using an impact and effort matrix, we identified which features delivered the most value with the least complexity. High-impact, low-effort features like a food pantry locator, live availability map, and traffic light stock status were prioritized for the MVP, while features like budget tracking and social/community tools were intentionally excluded to keep the experience focused on the core need: finding food quickly.',
       },
       {
         heading: 'Feature-Driven User Flows',
-        text: 'We mapped three core features—Real-Time Availability, an Information Center, and Community Reports—each tied to a specific user goal and rationale. Detailed user flows, such as locating the Comet Cupboard for available food, traced every decision point from opening the app to arriving at a location, ensuring the experience stayed clear and low-friction at each step.',
+        text: 'We mapped three core features: Real-Time Availability, an Information Center, and Community Reports; each tied to a specific user goal and rationale. Detailed user flows, such as locating the Comet Cupboard for available food, traced every decision point from opening the app to arriving at a location, ensuring the experience stayed clear and low-friction at each step.',
       },
       {
         heading: 'Mid-to-High Fidelity Wireframing',
