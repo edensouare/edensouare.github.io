@@ -24,10 +24,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: npm
+          cache-dependency-path: edensouare.github.io-main/package-lock.json
 
       - name: Install dependencies
         working-directory: ./edensouare.github.io-main
-        run: npm ci || npm install
+        run: npm ci
 
       - name: Build
         working-directory: ./edensouare.github.io-main
