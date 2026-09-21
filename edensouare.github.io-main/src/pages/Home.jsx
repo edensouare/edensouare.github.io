@@ -70,7 +70,10 @@ export default function Home() {
 
           <section className="about-note">
             <p className="section-label">Currently exploring</p>
-            <p>- Web development, inclusive design practices, responsive layouts, and accessibility standards used in real-world front-end and client-facing projects. </p>
+            <p>
+              - Web development standards used in real-world front-end and client-facing projects. Check out my unoffical w.i.p. for Intel's sustainability timeline:{' '}
+              <a href="https://edensouare.github.io/02-prj-intel-sustainability/" target="_blank" rel="noreferrer">https://edensouare.github.io/02-prj-intel-sustainability/</a>
+            </p>
             <p>- Interfaces that can communicate dense information while maintaining visual & aesthetic appeal</p>
             <p>...This space will keep changing as new experiments and ideas find their way in.</p>
           </section>
@@ -79,11 +82,10 @@ export default function Home() {
         <aside className="about-sidebar">
           <section className="about-box">
             <h2>Updates</h2>
-            <p>This portfolio is an evolving collection of my work.</p>
+            <p>Currently applying inclusive design practices, responsive layouts, and accessibility standards to this site.</p>
             <ul>
-              <li>Projects in UX and interaction design</li>
-              <li>Research in HCI and Machine Learning</li>
-              <li>Notes from ongoing experiments</li>
+              <li>Added carousel components to consolidate images in each Project and Research page</li>
+              <li>Added accordion components to improve readability of Approach sections</li>
             </ul>
           </section>
 
