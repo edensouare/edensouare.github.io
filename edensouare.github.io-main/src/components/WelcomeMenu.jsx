@@ -38,6 +38,7 @@ export default function WelcomeMenu() {
                 <textPath href="#welcome-name-circle"> Eden-Net Explorer </textPath>
               </text>
             </svg>
+            <span className="welcome-mobile-title">eden-net</span>
             <span className="welcome-core-action">{isOpen ? 'close' : ' '}</span>
           </button>
 

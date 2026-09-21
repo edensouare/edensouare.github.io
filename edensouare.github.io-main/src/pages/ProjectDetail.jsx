@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getEntryBySlug } from '../content'
+import ImageCarousel from '../components/ImageCarousel'
 
 export default function ProjectDetail({ isResearch = false }) {
   const { slug } = useParams()
@@ -128,28 +129,23 @@ export default function ProjectDetail({ isResearch = false }) {
         {/* Images grid */}
         {Array.isArray(entry.images) && entry.images.length > 0 && (
           <div className="detail-section">
-            <div className="image-grid">
-              {entry.images.map((img, i) => (
-                <div key={img + i} className="img-col-6">
-                  <img className="detail-image" src={`/${img}`} alt="" loading="lazy" />
-                </div>
-              ))}
-            </div>
+            <ImageCarousel images={entry.images} title={entry.title} />
           </div>
         )}
 
-        {/* Embedded prototype */}
-        {entry.prototypeUrl && (
+        {/* High-fidelity prototype video */}
+        {entry.videoUrl && (
           <div className="detail-section">
-            <h3>Hi-fi Prototype</h3>
-            <div className="prototype-frame">
-              <iframe
-                src={`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(entry.prototypeUrl)}`}
-                title={`${entry.title} hi-fi prototype`}
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
+            <h3>High-Fidelity Prototype</h3>
+            <video
+              className="prototype-video"
+              src={entry.videoUrl}
+              title={`${entry.title} high-fidelity prototype`}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </div>
         )}
 
@@ -158,17 +154,37 @@ export default function ProjectDetail({ isResearch = false }) {
           <div className="detail-section">
             <h3>Approach</h3>
             {entry.approach.map((a, i) => (
-              <div key={i} style={{ marginTop: i === 0 ? 0 : 12 }}>
-                {a.heading && <h4 style={{ marginBottom: 6 }}>{a.heading}</h4>}
-                {a.text && <p>{a.text}</p>}
-                {Array.isArray(a.list) && (
-                  <ul style={{ paddingLeft: 18, marginTop: 6 }}>
-                    {a.list.map((item, j) => (
-                      <li key={j}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              a.heading ? (
+                <details key={i} className="approach-accordion">
+                  <summary>
+                    <span>{a.heading}</span>
+                    <img className="approach-arrow" src="/down-arrow.png" alt="" aria-hidden="true" />
+                  </summary>
+                  <div className="approach-accordion-body">
+                    <div>
+                      {a.text && <p>{a.text}</p>}
+                      {Array.isArray(a.list) && (
+                        <ul>
+                          {a.list.map((item, j) => (
+                            <li key={j}>{item}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </details>
+              ) : (
+                <div key={i} className="approach-note">
+                  {a.text && <p>{a.text}</p>}
+                  {Array.isArray(a.list) && (
+                    <ul>
+                      {a.list.map((item, j) => (
+                        <li key={j}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )
             ))}
           </div>
         )}

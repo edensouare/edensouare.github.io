@@ -152,7 +152,7 @@ export const projects = [
       'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food rather than adding another app to compare and track.',
     ],
     images: Array.from({ length: 10 }, (_, index) => `CB${index + 1}.jpg`),
-    prototypeUrl: 'https://www.figma.com/proto/dDmZUTQK5K09C6DkTat301/Comet-Bites?node-id=109-873&p=f&t=jfpIVD3T66bIsQlw-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=109%3A873&show-proto-sidebar=1',
+    videoUrl: '/cometbites video.mp4',
     approach: [
       {
         heading: 'Problem Definition & Research Synthesis',

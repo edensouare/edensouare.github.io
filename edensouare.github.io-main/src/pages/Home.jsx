@@ -70,7 +70,9 @@ export default function Home() {
 
           <section className="about-note">
             <p className="section-label">Currently exploring</p>
-            <p>Interfaces that can communicate dense information while maintaining visual & aesthetic appeal... This space will keep changing as new experiments and ideas find their way in.</p>
+            <p>- Web development, inclusive design practices, responsive layouts, and accessibility standards used in real-world front-end and client-facing projects. </p>
+            <p>- Interfaces that can communicate dense information while maintaining visual & aesthetic appeal</p>
+            <p>...This space will keep changing as new experiments and ideas find their way in.</p>
           </section>
         </article>
 
