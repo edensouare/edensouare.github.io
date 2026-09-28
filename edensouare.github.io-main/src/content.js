@@ -101,12 +101,47 @@ export const projects = [
       'MRIresults3.jpg',
     ],
     approach: [
-      { text: 'We developed a convolutional neural network (CNN) pipeline trained on MRI brain scans to classify Alzheimer’s progression across four stages.'},
-      { heading: 'Model Development', text: 'The model was trained using an augmented MRI dataset, with hyperparameter tuning applied to improve efficiency and performance. A 2-fold cross-validation strategy ensured reliability across splits.' },
-      { heading: 'Performance & Insights', text: 'The model achieved 79% test accuracy, 85% precision, and 71% recall, demonstrating strong capability in early-stage detection. High precision indicates reduced false positives (valuable in clinical contexts) while lower recall in later stages highlights dataset imbalance challenges.' },
-      { heading: 'Comparative Context', text: 'While prior studies achieved higher accuracy (93–95%), they relied on multimodal inputs (MRI, PET, CSF). Our work demonstrates that single-modality MRI models can still yield meaningful diagnostic insight, especially in resource-constrained settings.' },
-      { heading: 'Future Directions', text: 'Improving recall through balanced datasets and integrating multimodal inputs could further enhance model sensitivity and real-world applicability.' },
-    ],
+  {
+    heading: 'Clinical Staging Framework',
+    text:
+      'We designed a deep learning pipeline to classify the severity of Alzheimer\'s disease directly from brain MRI scans. Rather than a simple healthy-versus-diseased split, the task was framed as a four-stage classification (Non-Demented, Very Mild, Mild, and Moderate Demented), so the output could help clinicians categorize a patient\'s stage and plan appropriate treatment. Using MRI alone keeps the approach non-invasive and practical where more advanced imaging is unavailable.'
+  },
+  {
+    heading: 'Dataset & Input Modeling',
+    text:
+      'We trained on the Augmented Alzheimer\'s MRI Dataset from Kaggle, imported via kagglehub, which contains real patient brain scans expanded through augmentation to improve model performance. MRI pixel values served as the sole predictors, and each image was labeled with one of the four dementia stages. Because the dataset is multi-class, the model can grade severity rather than only detect its presence.'
+  },
+  {
+    heading: 'Transfer Learning Architecture',
+    text:
+      'We built the classifier on EfficientNetB0, a convolutional neural network pre-trained on ImageNet, giving the model a strong foundation for image feature extraction. EfficientNetB0 uses MBConv blocks with variable kernel sizes and strides through compound scaling, which improves computational efficiency over fixed architectures like VGG19. This let us adapt a proven image-classification backbone to MRI staging instead of training from scratch.'
+  },
+  {
+    heading: 'Regularization & Hyperparameter Tuning',
+    text:
+      'To balance model complexity against overfitting, we reduced the hidden layer from 256 to 128 units and applied a 30% dropout rate, randomly deactivating neurons during training. Training ran for up to 20 epochs with EarlyStopping (patience of 3), which halted training once performance plateaued and saved compute time.'
+  },
+  {
+    heading: '2-Fold Cross-Validation Strategy',
+    text:
+      'To verify reliability beyond a single data split, we evaluated the model with 2-fold cross-validation, training on one fold and testing on the other, then swapping. Test accuracy was 78% on the first fold and 80% on the second, averaging 79%. This close agreement suggests the model is consistent and generalizes rather than depending on one particular split.'
+  },
+  {
+    heading: 'Performance Evaluation & Insights',
+    text:
+      'The model reached 79% test accuracy, 85% precision, and 71% recall, compared with 84%, 89%, and 76% on training data. High precision means fewer false positives, which matters in clinical contexts, while lower recall reflects a greater risk of missed cases, particularly in later stages where class imbalance limits performance. The model reliably identifies early-stage Alzheimer\'s, which is critical for timely intervention, but struggles to separate subtle stages such as Mild from Moderate Demented.'
+  },
+  {
+    heading: 'Comparative Context',
+    text:
+      'Prior multimodal studies (MRI, PET, and CSF biomarkers) reported higher accuracy of 93–95%, but on simpler tasks such as distinguishing Alzheimer\'s patients from healthy controls. Our model tackled a harder four-class problem with a single imaging modality. Its 71% recall also closely aligns with the 74.58% recall reported for predicting MCI conversion in earlier work, showing that MRI-only CNNs can offer meaningful diagnostic insight when resources limit multimodal data.'
+  },
+  {
+    heading: 'Future Iteration Strategy',
+    text:
+      'Building on these findings, future work focuses on improving recall through more balanced datasets; integrating multimodal inputs for more nuanced stage detection; improving separation between adjacent stages like Mild and Moderate; and conducting clinical validation to assess real-world applicability.'
+  },
+],
   },
   {
     slug: 'meal-hopper',
@@ -206,16 +241,47 @@ export const projects = [
     ],
     images: ['Seppit1.jpg','Seppit2.jpg','Seppit3.jpg','Seppit4.jpg','Seppit5.jpg','Seppit6.jpg','Seppit7.jpg','Seppit8.jpg'],
     approach: [
-
-      { text: 'We approached audio separation by reframing sound as a visual problem.' },
-      { heading: 'Spectrogram Representation', text: 'Audio signals were converted into spectrograms, transforming frequency and time into image-like data suitable for deep learning.' },
-      { heading: 'Dataset', text: 'We used the MUSDB18 dataset, containing fully separated stems (vocals, drums, bass, other), allowing supervised training' },
-      { heading: 'Model Architecture', text: 'A U-Net convolutional architecture was implemented:\n' },
-      { list: [ 'Down-sampling layers compress feature representations', 'Up-sampling reconstructs outputs to original dimensions\n'] },
-      { heading: '', text: 'Though designed for image segmentation, U-Net proved effective in isolating audio components due to the visual structure of spectrograms.' },
-      { heading: 'Evaluation', text: 'Performance was measured using Signal-to-Distortion Ratio (SDR), comparing reconstructed outputs against ground truth stems.' },
-      { heading: 'Results', test: 'After ~80,000 training iterations:'}, {list: ['Achieved balanced SDR performance across stems', 'Demonstrated feasibility of CNN-based audio separation despite modality differences' ] },
-    ],
+  {
+    heading: 'Audio-as-Image Framework',
+    text:
+      'We approached stem separation by reframing sound as a visual problem. Instead of processing raw waveforms, we represented audio as spectrograms, which show the constituent frequencies of a track over time. This turned the task of isolating instruments from a mixed track into an image-to-image translation problem, where a model learns to map a mixture to the individual stems (drums, bass, vocals, and other) it contains.'
+  },
+  {
+    heading: 'Supervised Dataset Design',
+    text:
+      'We trained on MUSDB18, a collection of 150 full-length tracks across various genres, split into 100 songs for training and 50 for testing. Every song ships with its mixture and separated stems (drums, bass, vocals, and other), providing the ground truth needed for supervised learning. Because the stems are already isolated, the model can learn directly from examples of what each instrument should look like once pulled out of the mix.'
+  },
+  {
+    heading: 'Spectrogram Preprocessing Pipeline',
+    text:
+      'Tracks arrive as .STEM files, which we decomposed into individual .wav files for faster audio decoding. For each song, we located every stem\'s .wav file, loaded the audio into memory, and built spectrograms using the short-time Fourier transform. This pipeline converts frequency and time into image-like data suitable for convolutional deep learning.'
+  },
+  {
+    heading: 'Spectrogram Data Augmentation',
+    text:
+      'To increase training variety, we augmented the spectrograms with four methods: time warping (changing spectrogram length), pitch shifting (changing its height), frequency masking (blocking a strip of the frequency axis), and time masking (blocking a strip of the time axis). These transformations expose the model to altered versions of the same music, encouraging it to learn robust patterns of each instrument rather than memorizing specific songs.'
+  },
+  {
+    heading: 'U-Net Architecture',
+    text:
+      'We implemented a U-Net, a fully convolutional network defined by an encoding path followed by a decoding path. Down-sampling layers compress the spectrogram into compact feature representations, and up-sampling layers reconstruct the output back to the original dimensions. Our network stacks convolutional layers with LeakyReLU activations and batch normalization, with max-pooling for down-sampling. Although U-Net was originally developed for biomedical image segmentation, its ability to preserve fine spatial detail suits spectrograms, where each instrument leaves a distinct visual structure.'
+  },
+  {
+    heading: 'SDR-Based Evaluation',
+    text:
+      'We evaluated separation quality using the Source-to-Distortion Ratio (SDR), which compares the energy of the target source against the combined interference, noise, and artifacts in the output. A positive SDR means the output contains more source than distortion, while a negative SDR means distortion dominates, giving us a clear, interpretable measure against the ground-truth stems.'
+  },
+  {
+    heading: 'Training Results & Insights',
+    text:
+      'The model completed 80,000 training iterations in roughly 12 hours and reached a validation SDR of +0.03, meaning the separated output contained roughly equal amounts of desired signal and unwanted distortion. This shows that a CNN built for images can learn to separate audio from spectrograms, even though the modality differs. The near-zero SDR also marks clear room for improvement in separation quality.'
+  },
+  {
+    heading: 'Applications & Impact',
+    text:
+      'Reliable stem separation would let DJs isolate song elements for remixes, help producers break down tracks and neatly sample audio elements, and support karaoke, music learning, and independent creative projects. Giving users control over individual components of a finished song is what makes the approach valuable beyond the model itself.'
+  },
+],
   },
 ]
 
