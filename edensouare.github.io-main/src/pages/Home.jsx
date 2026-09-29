@@ -62,8 +62,8 @@ export default function Home() {
       <div className="about-layout">
         <article className="about-main">
           <p className="section-label">About</p>
-          <h1>Welcome to my corner of the internet.</h1>
-          <p><strong>Hello, I'm Eden, a Cognitive Science and Computer Science student.</strong></p>
+          <h1>Welcome to my corner of the internet. 👋</h1>
+          <p><strong>Hello, I'm Eden, an aspiring UX/HCI researcher.</strong></p>
           <p>I design human-centered digital systems at the intersection of UX Research, Human-Computer Interaction, and Machine Learning. My work asks how people think, build trust, and make meaning while interacting with technology.</p>
           <p>I care about thoughtful interfaces, accessible experiences, and research that turns complicated questions into useful, everyday tools.</p>
           <p>Browse the <Link to="/projects">projects</Link> and <Link to="/research">research</Link> pages to see the work showcased on this website.</p>
@@ -71,10 +71,10 @@ export default function Home() {
           <section className="about-note">
             <p className="section-label">Currently exploring</p>
             <p>
-              - Web development standards used in real-world front-end and client-facing projects. Check out my unoffical w.i.p. for Intel's sustainability timeline:{' '}
+              ★ Web development standards used in real-world front-end and client-facing projects. Check out my unoffical w.i.p. for Intel's sustainability timeline:{' '}
               <a href="https://edensouare.github.io/02-prj-intel-sustainability/" target="_blank" rel="noreferrer">https://edensouare.github.io/02-prj-intel-sustainability/</a>
             </p>
-            <p>- Interfaces that can communicate dense information while maintaining visual & aesthetic appeal</p>
+            <p>★ Interfaces that can communicate dense information while maintaining visual & aesthetic appeal</p>
             <p>...This space will keep changing as new experiments and ideas find their way in.</p>
           </section>
         </article>
@@ -95,6 +95,7 @@ export default function Home() {
               <li><Link to="/projects">Selected projects</Link></li>
               <li><Link to="/research">Academic research</Link></li>
               <li><a href="mailto:edensouare@gmail.com">Get in touch</a></li>
+              <li><a href="https://www.linkedin.com/in/edensouare/" target="_blank" rel="noreferrer">LinkedIn</a></li>
             </ul>
           </section>
         </aside>
