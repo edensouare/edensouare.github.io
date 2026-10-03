@@ -476,6 +476,10 @@ body {
   margin: 8px 0 18px 0;
 }
 
+.split-columns.single-column {
+  grid-template-columns: 1fr;
+}
+
 .detail-section {
   margin: 20px 0;
 }
@@ -848,7 +852,7 @@ body {
 }
 .welcome-link:hover { color: #ffffff; }
 .welcome-link-about { top: 4%; left: 50%; transform: translateX(-50%) scale(0.7); }
-.welcome-link-projects { top: 50%; right: -3%; transform: translateY(-50%) scale(0.7); }
+.welcome-link-projects { top: 50%; right: -8%; transform: translateY(-50%) scale(0.7); }
 .welcome-link-research { bottom: 4%; left: 50%; transform: translateX(-50%) scale(0.7); }
 
 .welcome-stage.is-open .welcome-link { opacity: 1; transform: scale(1); }
@@ -1003,7 +1007,7 @@ input[type='range']:focus { outline: none; }
   .welcome-stage { min-height: calc(100vh - 36px); }
   .welcome-kicker { top: 8%; }
   .welcome-hint { bottom: 12%; }
-  .welcome-link-projects { right: -1%; }
+  .welcome-link-projects { right: -5%; }
 }
 
 @media (max-width: 900px) {

@@ -92,7 +92,7 @@ export default function ProjectDetail({ isResearch = false }) {
 
         {/* My Role and Credits side by side when both exist */}
         {(entry.role || entry.credits) && (
-          <div className="split-columns">
+          <div className={`split-columns${entry.role && entry.credits ? '' : ' single-column'}`}>
             {entry.role && (
               <div>
                 <h3>My Role</h3>
