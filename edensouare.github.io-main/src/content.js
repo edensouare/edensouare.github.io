@@ -1,5 +1,133 @@
 export const projects = [
   {
+  slug: 'access-as-ownership',
+  title: 'Access as Ownership',
+  subtitle: 'CoBank x Early Talent Competitions: Reimagine the Customer Experience (1st Place)',
+  year: '2026',
+  header: 'How might we ensure every CoBank customer-owner, regardless of age or ability, can navigate cobank.com well enough to exercise their rights as an owner, not just find information as a customer?',
+  tags: ['UX Research', 'Accessibility', 'Web Audit', 'Lighthouse', 'Business Case', 'Pitch'],
+  role: [
+    'UX Researcher conducting a Lighthouse accessibility audit of cobank.com and grounding pain points in U.S. Census data',
+    'Strategist and Designer scoping a site-wide accessibility fix, modeling the user journey, and building the business case and success metrics',
+  ],
+  credits: [
+    'Individual project',
+    'CoBank x Early Talent Competitions',
+  ],
+  motivation: [
+    "CoBank is a cooperative, not just a bank: its customers are its owners, who vote in board elections and receive governance disclosures through cobank.com. For a cooperative, website access is not a convenience, it is the way owners exercise their rights.",
+    'An accessibility audit of cobank.com revealed two fixable gaps in shared, site-wide components: a header navigation that renders twice, forcing screen-reader and keyboard users to tab through the same links twice, and icon-only footer links with no accessible name. This matters because rural residents report disabilities at a higher rate than urban residents (14.7% vs. 12.6%) and are more likely to be 65 or older (19.9% vs. 16.0%), a profile that matches CoBank\'s customer-owner base.',
+    'I saw an opportunity to design a low-effort, high-impact fix: a scoped change to CoBank\'s shared header and footer, paired with ongoing testing with rural users with disabilities, rather than a full site redesign.',
+  ],
+  images: [
+    'cobank_souare_utdallas.jpg',
+    'cobank_souare_utdallas (1).jpg',
+    'cobank_souare_utdallas (2).jpg',
+    'cobank_souare_utdallas (3).jpg',
+    'cobank_souare_utdallas (4).jpg',
+    'cobank_souare_utdallas (5).jpg',
+    'cobank_souare_utdallas (6).jpg',
+    'cobank_souare_utdallas (7).jpg',
+  ],
+  approach: [
+  {
+    heading: 'Cooperative-Centered Problem Framing',
+    text:
+      'I began with what makes CoBank different from a typical bank: its customers are its owners, who vote in board elections and receive governance disclosures through cobank.com. That reframed the challenge from improving a website to protecting an owner\'s ability to exercise their rights. My guiding question became: how might we ensure every customer-owner, regardless of age or ability, can navigate cobank.com well enough to act as an owner, not just find information as a customer?'
+  },
+  {
+    heading: 'Data-Grounded Need Identification',
+    text:
+      'I grounded the problem in U.S. Census data showing that 14.7% of rural residents report a disability, compared with 12.6% of urban residents, and that 19.9% of rural residents are 65 or older, compared with 16.0% urban. Because CoBank\'s customer-owner base skews older and rural, the people most likely to face accessibility barriers are the people the cooperative exists to serve.'
+  },
+  {
+    heading: 'Accessibility Audit',
+    text:
+      'I ran a Lighthouse accessibility audit on cobank.com and found two concrete, fixable issues. First, the header navigation renders twice (a hidden second menu is still readable by screen readers), forcing screen-reader and keyboard users to tab through the same links twice before reaching any content. Second, icon-only footer links, such as social media icons, have no accessible name, so assistive technology announces nothing useful. Both live in shared components used site-wide, not just on the homepage.'
+  },
+  {
+    heading: '"Accessible by Default" Solution Design',
+    text:
+      'Rather than propose a full redesign, I scoped a targeted fix to the shared header and footer components with three parts: naming every icon-only link so screen readers announce what it is (e.g., "CoBank on LinkedIn"), removing the duplicate navigation from assistive technology so users tab through it once, and correcting list markup so grouped content like menus and card grids reads as organized lists instead of flat text. Because these are shared components, one fix updates every page.'
+  },
+  {
+    heading: 'User Journey Modeling',
+    text:
+      'To show what the fix changes in practice, I mapped the experience of Carol, a 68-year-old West Texas rancher with low vision and a CoBank customer-owner reviewing candidates before the annual board election. Today she hears the same six navigation links twice, reaches unlabeled footer icons, and loses her place. After the fix, she tabs through the navigation once and moves directly to Governance, then Board Elections, to review candidates and vote. The journey shows the barrier is a loss of participation, not a minor annoyance.'
+  },
+  {
+    heading: 'Outcome-Based Success Metrics',
+    text:
+      'I defined success by what customer-owners can do, not by an improved audit score. Component-level checks (zero duplicate tab-stops in the shared navigation, and 100% of icon-only interactive elements carrying an accessible name) are objective and verifiable at launch. Task completion, measured through usability testing with assistive-technology users navigating from the homepage to Governance, and qualitative feedback from a rural disability advocacy partner like APRIL add real-world validation. The long-term metric is whether board-election participation among assistive-technology users comes to match that of other owners.'
+  },
+  {
+    heading: 'Business Case Development',
+    text:
+      'I built a case for the stakeholders who would fund the work. Federal ADA website-accessibility lawsuits reached 3,117 in 2025, up 27% from 2024, including in financial services. The fix is a small engineering lift with site-wide payoff, protects relationships with CoBank\'s older, rural, higher-disability customer-owners, and gives CoBank a visible, hard-to-copy way to back its mission of supporting rural America.'
+  },
+  {
+    heading: 'Future Iteration Strategy',
+    text:
+      'Looking ahead, I propose piloting the fixes across the shared header and footer components, then pairing each rollout with ongoing usability testing involving real rural users with disabilities through advocacy partners like APRIL. This keeps accessibility an ongoing commitment rather than a one-time fix, and ensures improvements are tested with the people they are meant to help.'
+  },
+  ],
+  },
+
+  {
+    slug: 'comet-bites',
+    title: 'Comet Bites',
+    subtitle: 'Design Research Methods UX Project',
+    year: '2026',
+    header: 'How might we help UTD students locate free or affordable food in real time?',
+    tags: ['UX/UI', 'UX Research', 'App', 'Figma', 'A/B Testing', '5 Sec Test'],
+    role: [
+      'UX Researcher conducting 5-second tests and A/B tests to validate navigation and screen clarity',
+      'Interaction Designer shaping user flows, MVP scope, and mid-to-high fidelity wireframes in Figma',
+    ],
+    credits: [
+      'Karlie Ulloa',
+      'Nu Nguyen',
+      'Advised by Isi Barreiro',
+    ],
+    motivation: [
+      "About a quarter of students at UT Dallas face food insecurity, and it's not solely a financial issue. Through early research, we found that students often don't know where to find affordable or free food nearby, and when resources do exist, information is scattered, outdated, or hard to access.",
+      'Beyond visibility, there is a quieter barrier: stigma. Students frequently feel embarrassed using campus food resources or are unsure whether they even qualify for support, which keeps them from seeking help even when it\'s available.',
+      'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food rather than adding another app to compare and track.',
+    ],
+    images: Array.from({ length: 10 }, (_, index) => `CB${index + 1}.jpg`),
+    videoUrl: '/cometbites video.mp4',
+    approach: [
+      {
+        heading: 'Problem Definition & Research Synthesis',
+        text: 'We grounded the project in research evidence before designing anything. Findings showed students skip meals near the end of the month, feel embarrassed using campus food resources, remain unsure about eligibility and support options, and often resort to comparing prices across multiple apps just to get by. These insights shaped every decision that followed.',
+      },
+      {
+        heading: 'MVP Scoping with Impact & Effort Prioritization',
+        text: 'Using an impact and effort matrix, we identified which features delivered the most value with the least complexity. High-impact, low-effort features like a food pantry locator, live availability map, and traffic light stock status were prioritized for the MVP, while features like budget tracking and social/community tools were intentionally excluded to keep the experience focused on the core need: finding food quickly.',
+      },
+      {
+        heading: 'Feature-Driven User Flows',
+        text: 'We mapped three core features: Real-Time Availability, an Information Center, and Community Reports; each tied to a specific user goal and rationale. Detailed user flows, such as locating the Comet Cupboard for available food, traced every decision point from opening the app to arriving at a location, ensuring the experience stayed clear and low-friction at each step.',
+      },
+      {
+        heading: 'Mid-to-High Fidelity Wireframing',
+        text: 'We iterated through wireframes in Figma, refining screens like the live map, location updates, and community reporting flow. Each version clarified how users select a food availability status (Plenty, Low, Empty) and submit updates, moving the interface from a rough structure to a polished, intuitive flow.',
+      },
+      {
+        heading: '5-Second Testing & A/B Testing',
+        text: 'We ran 5-second tests to check whether users could immediately grasp the purpose of key screens, such as the Community Page. Results showed users understood its connection to food and pantry updates, but that action labels needed to be more direct. We paired this with A/B testing to compare design variations, learning that users consistently preferred layouts with real-time context, simple status labels, and clear location information.',
+      },
+      {
+        heading: 'Iteration Based on Testing Insights',
+        text: 'Testing directly shaped our final design decisions. We rewrote vague action labels like "Post" into clearer, task-specific wording such as "Report Available Food," and made real-time availability more visually prominent so students could make confident decisions faster.',
+      },
+      {
+        heading: 'Reflection & Future Growth',
+        text: 'With more time, we would focus on improving real-time data accuracy, expanding food event reporting, and testing with a larger, more diverse group of UTD students to further validate and refine the experience.',
+      },
+    ],
+  },
+  {
     slug: 'lookism',
     title: 'Lookism',
     subtitle: 'Human-Robot Interaction',
@@ -163,60 +291,6 @@ export const projects = [
       { heading: 'Design Exploration', text: 'Iterated on interface concepts prioritizing clarity, accessibility, and efficiency.' },
       { heading: 'Prototype Development', text: 'Built a high-fidelity UI showcasing core workflows such as search, cart management, and delivery tracking.' },
       { heading: 'Final Specification', text: 'Established consistent design patterns and system behaviors to support scalable implementation.' },
-    ],
-  },
-  {
-    slug: 'comet-bites',
-    title: 'Comet Bites',
-    subtitle: 'Design Research Methods UX Project',
-    year: '2026',
-    header: 'How might we help UTD students locate free or affordable food in real time?',
-    tags: ['UX/UI', 'UX Research', 'App', 'Figma', 'A/B Testing', '5 Sec Test'],
-    role: [
-      'UX Researcher conducting 5-second tests and A/B tests to validate navigation and screen clarity',
-      'Interaction Designer shaping user flows, MVP scope, and mid-to-high fidelity wireframes in Figma',
-    ],
-    credits: [
-      'Karlie Ulloa',
-      'Nu Nguyen',
-      'Advised by Isi Barreiro',
-    ],
-    motivation: [
-      "About a quarter of students at UT Dallas face food insecurity, and it's not soley a financial issue. Through early research, we found that students often don't know where to find affordable or free food nearby, and when resources do exist, information is scattered, outdated, or hard to access.",
-      'Beyond visibility, there is a quieter barrier: stigma. Students frequently feel embarrassed using campus food resources or are unsure whether they even qualify for support, which keeps them from seeking help even when it\'s available.',
-      'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food rather than adding another app to compare and track.',
-    ],
-    images: Array.from({ length: 10 }, (_, index) => `CB${index + 1}.jpg`),
-    videoUrl: '/cometbites video.mp4',
-    approach: [
-      {
-        heading: 'Problem Definition & Research Synthesis',
-        text: 'We grounded the project in research evidence before designing anything. Findings showed students skip meals near the end of the month, feel embarrassed using campus food resources, remain unsure about eligibility and support options, and often resort to comparing prices across multiple apps just to get by. These insights shaped every decision that followed.',
-      },
-      {
-        heading: 'MVP Scoping with Impact & Effort Prioritization',
-        text: 'Using an impact and effort matrix, we identified which features delivered the most value with the least complexity. High-impact, low-effort features like a food pantry locator, live availability map, and traffic light stock status were prioritized for the MVP, while features like budget tracking and social/community tools were intentionally excluded to keep the experience focused on the core need: finding food quickly.',
-      },
-      {
-        heading: 'Feature-Driven User Flows',
-        text: 'We mapped three core features: Real-Time Availability, an Information Center, and Community Reports; each tied to a specific user goal and rationale. Detailed user flows, such as locating the Comet Cupboard for available food, traced every decision point from opening the app to arriving at a location, ensuring the experience stayed clear and low-friction at each step.',
-      },
-      {
-        heading: 'Mid-to-High Fidelity Wireframing',
-        text: 'We iterated through wireframes in Figma, refining screens like the live map, location updates, and community reporting flow. Each version clarified how users select a food availability status (Plenty, Low, Empty) and submit updates, moving the interface from a rough structure to a polished, intuitive flow.',
-      },
-      {
-        heading: '5-Second Testing & A/B Testing',
-        text: 'We ran 5-second tests to check whether users could immediately grasp the purpose of key screens, such as the Community Page. Results showed users understood its connection to food and pantry updates, but that action labels needed to be more direct. We paired this with A/B testing to compare design variations, learning that users consistently preferred layouts with real-time context, simple status labels, and clear location information.',
-      },
-      {
-        heading: 'Iteration Based on Testing Insights',
-        text: 'Testing directly shaped our final design decisions. We rewrote vague action labels like "Post" into clearer, task-specific wording such as "Report Available Food," and made real-time availability more visually prominent so students could make confident decisions faster.',
-      },
-      {
-        heading: 'Reflection & Future Growth',
-        text: 'With more time, we would focus on improving real-time data accuracy, expanding food event reporting, and testing with a larger, more diverse group of UTD students to further validate and refine the experience.',
-      },
     ],
   },
   {
