@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 const academicHubLetters = 'Academic hub'.split('')
 
+/*
 function findFemaleVoice(voices) {
   return voices.find(voice => /child|kid|junior/i.test(voice.name))
     || voices.find(voice => /female|samantha|victoria|karen|zira|moira|susan|ava|allison|siri/i.test(voice.name))
@@ -20,8 +21,10 @@ function speakLetter(letter, voices) {
   utterance.pitch = 1.05
   window.speechSynthesis.speak(utterance)
 }
+*/
 
 export default function Home() {
+  /*
   const voices = useRef([])
 
   useEffect(() => {
@@ -36,6 +39,7 @@ export default function Home() {
   }, [])
 
   const stopSpeech = () => window.speechSynthesis?.cancel()
+  */
 
   return (
     <main className="about-page">
@@ -48,8 +52,6 @@ export default function Home() {
                 key={`${letter}-${index}`}
                 className={letter === ' ' ? 'speech-letter speech-space' : 'speech-letter'}
                 aria-hidden="true"
-                onMouseEnter={() => speakLetter(letter, voices.current)}
-                onMouseLeave={stopSpeech}
               >
                 {letter === ' ' ? '\u00a0' : letter}
               </span>
@@ -64,7 +66,7 @@ export default function Home() {
           <p className="section-label">About</p>
           <h1>Welcome to my corner of the internet. 👋</h1>
           <p><strong>Hello, I'm Eden, an aspiring UX/HCI researcher.</strong></p>
-          <p>I design human-centered digital systems at the intersection of UX Research, Human-Computer Interaction, and Machine Learning. My work asks how people think, build trust, and make meaning while interacting with technology.</p>
+          <p>I design human-centered digital systems that combine my knowledge of UX Research, Human-Computer Interaction, and Machine Learning. My work asks how people think, build trust, and make meaning while interacting with technology.</p>
           <p>I care about thoughtful interfaces, accessible experiences, and research that turns complicated questions into useful, everyday tools.</p>
           <p>Browse the <Link to="/projects">projects</Link> and <Link to="/research">research</Link> pages to see the work showcased on this website.</p>
 
