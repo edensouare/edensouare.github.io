@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import MusicPlayer from './MusicPlayer'
+// import MusicPlayer from './MusicPlayer'
 
 export default function WelcomeMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,7 +57,7 @@ export default function WelcomeMenu() {
 
         <p className="welcome-hint">Click the center to open the menu</p>
 
-        <MusicPlayer />
+        {/* <MusicPlayer /> */}
       </div>
     </main>
   )
