@@ -10,10 +10,6 @@ export const projects = [
     'UX Researcher conducting a Lighthouse accessibility audit of cobank.com and grounding pain points in U.S. Census data',
     'Strategist and Designer scoping a site-wide accessibility fix, modeling the user journey, and building the business case and success metrics',
   ],
-  credits: [
-    'Individual project',
-    'CoBank x Early Talent Competitions',
-  ],
   motivation: [
     "CoBank is a cooperative, not just a bank: its customers are its owners, who vote in board elections and receive governance disclosures through cobank.com. For a cooperative, website access is not a convenience, it is the way owners exercise their rights.",
     'An accessibility audit of cobank.com revealed two fixable gaps in shared, site-wide components: a header navigation that renders twice, forcing screen-reader and keyboard users to tab through the same links twice, and icon-only footer links with no accessible name. This matters because rural residents report disabilities at a higher rate than urban residents (14.7% vs. 12.6%) and are more likely to be 65 or older (19.9% vs. 16.0%), a profile that matches CoBank\'s customer-owner base.',
