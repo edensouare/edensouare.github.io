@@ -73,8 +73,12 @@ export default function Home() {
           <section className="about-note">
             <p className="section-label">Currently exploring</p>
             <p>
-              ★ Web development standards used in real-world front-end and client-facing projects. Check out my unoffical w.i.p. for Intel's sustainability timeline:{' '}
-              <a href="https://edensouare.github.io/02-prj-intel-sustainability/" target="_blank" rel="noreferrer">https://edensouare.github.io/02-prj-intel-sustainability/</a>
+              ★ UX & Web Development standards used in real-world front-end and client-facing projects. Check out my First Place submission <a href="https://edensouare.github.io/projects/access-as-ownership" target="_blank" rel="noreferrer">Access as Ownership</a> for CoBank's® Early Talent Competition.
+            </p>
+            <p>
+              ★ More WebDev...here are my unoffical w.i.p.'s for Intel® Sustainability:{' '}
+              <a href="https://edensouare.github.io/02-prj-intel-sustainability/" target="_blank" rel="noreferrer">Sustainability Timeline</a> and{' '}
+              <a href="https://edensouare.github.io/05-prj-intel-event-check-in/" target="_blank" rel="noreferrer">Sustainability Summit Check-In</a>
             </p>
             <p>★ Interfaces that can communicate dense information while maintaining visual & aesthetic appeal</p>
             <p>...This space will keep changing as new experiments and ideas find their way in.</p>
@@ -83,7 +87,7 @@ export default function Home() {
 
         <aside className="about-sidebar">
           <section className="about-box">
-            <h2>Updates</h2>
+            <h2>Site Updates</h2>
             <p>Currently applying inclusive design practices, responsive layouts, and accessibility standards to this site.</p>
             <ul>
               <li>Added carousel components to consolidate images in each Project and Research page</li>
@@ -92,11 +96,9 @@ export default function Home() {
           </section>
 
           <section className="about-links-panel">
-            <h2>Explore</h2>
+            <h2>Contact</h2>
             <ul className="about-links">
-              <li><Link to="/projects">Selected projects</Link></li>
-              <li><Link to="/research">Academic research</Link></li>
-              <li><a href="mailto:edensouare@gmail.com">Get in touch</a></li>
+              <li><a href="mailto:edensouare@gmail.com">Email</a></li>
               <li><a href="https://www.linkedin.com/in/edensouare/" target="_blank" rel="noreferrer">LinkedIn</a></li>
             </ul>
           </section>

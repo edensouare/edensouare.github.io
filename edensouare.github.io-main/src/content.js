@@ -20,14 +20,14 @@ export const projects = [
     'I saw an opportunity to design a low-effort, high-impact fix: a scoped change to CoBank\'s shared header and footer, paired with ongoing testing with rural users with disabilities, rather than a full site redesign.',
   ],
   images: [
-    'cobank_souare_utdallas.jpg',
-    'cobank_souare_utdallas (1).jpg',
-    'cobank_souare_utdallas (2).jpg',
-    'cobank_souare_utdallas (3).jpg',
-    'cobank_souare_utdallas (4).jpg',
-    'cobank_souare_utdallas (5).jpg',
-    'cobank_souare_utdallas (6).jpg',
-    'cobank_souare_utdallas (7).jpg',
+    'cobank_souare_utdallas.png',
+    'cobank_souare_utdallas (1).png',
+    'cobank_souare_utdallas (2).png',
+    'cobank_souare_utdallas (3).png',
+    'cobank_souare_utdallas (4).png',
+    'cobank_souare_utdallas (5).png',
+    'cobank_souare_utdallas (6).png',
+    'cobank_souare_utdallas (7).png',
   ],
   approach: [
   {
