@@ -73,7 +73,7 @@ export default function Home() {
           <section className="about-note">
             <p className="section-label">Currently exploring</p>
             <p>
-              ★ UX & Web Development standards used in real-world front-end and client-facing projects. Check out my First Place submission <a href="https://edensouare.github.io/projects/access-as-ownership" target="_blank" rel="noreferrer">Access as Ownership</a> for CoBank's® Early Talent Competition.
+              ★ UX & Web Development standards used in real-world front-end and client-facing projects. Check out my <span className="first-place-tilt">first place</span> submission <a href="https://edensouare.github.io/projects/access-as-ownership" target="_blank" rel="noreferrer">Access as Ownership</a> for CoBank's® Early Talent Competition.
             </p>
             <p>
               ★ More WebDev...here are my unoffical w.i.p.'s for Intel® Sustainability:{' '}

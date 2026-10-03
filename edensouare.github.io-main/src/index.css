@@ -210,6 +210,22 @@ body {
   .speech-letter { animation: none; }
 }
 
+@keyframes first-place-tilt {
+  from { transform: rotate(5deg); }
+  to { transform: rotate(-5deg); }
+}
+
+.first-place-tilt {
+  display: inline-block;
+  animation: first-place-tilt 1s infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .first-place-tilt {
+    animation: none;
+  }
+}
+
 .about-banner-copy { margin-top: 8px; color: var(--text-secondary); }
 
 .about-layout {
