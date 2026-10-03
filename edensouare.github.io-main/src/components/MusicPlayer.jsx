@@ -21,7 +21,7 @@ export default function MusicPlayer() {
   const [isRepeat, setIsRepeat] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [volume, setVolume] = useState(1)
+  const [volume, setVolume] = useState(0.25)
 
   useEffect(() => {
     const audio = audioRef.current
@@ -32,6 +32,10 @@ export default function MusicPlayer() {
     setDuration(0)
     return () => audio.pause()
   }, [trackIndex])
+
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume
+  }, [volume])
 
   useEffect(() => {
     const audio = audioRef.current
