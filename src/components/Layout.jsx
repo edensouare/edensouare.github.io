@@ -14,7 +14,7 @@ export default function Layout({ children }) {
       <aside className="sidebar" aria-label="Site navigation">
         <header className="profile-top">
           <h1>Eden Souare</h1>
-          <p className="text-muted">Exploring UX, HCI, and ML📍Dallas, Texas, USA</p>
+          <p className="text-muted">Exploring UX, HCI, and ML📍Dallas, Texas & New York, USA</p>
         </header>
 
         <nav className="nav-menu" aria-label="Primary">
@@ -22,10 +22,6 @@ export default function Layout({ children }) {
           <NavLink to="/projects" className="nav-item">Projects</NavLink>
           <NavLink to="/research" className="nav-item">Research</NavLink>
         </nav>
-
-        <div className="status-badge" aria-live="polite">
-          <span className="dot" aria-hidden="true"></span> Open for Work
-        </div>
       </aside>
 
       <main className="content-area">{children}</main>

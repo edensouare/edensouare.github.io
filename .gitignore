@@ -1,6 +1,6 @@
-# Node/Vite artifacts in sub-project
-edensouare.github.io-main/node_modules/
-edensouare.github.io-main/dist/
+# Node/Vite artifacts
+node_modules/
+dist/
 
 # OS files
 .DS_Store
