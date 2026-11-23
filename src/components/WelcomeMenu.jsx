@@ -21,13 +21,14 @@ export default function WelcomeMenu() {
   return (
     <main className="welcome-screen">
       <div className={`welcome-stage ${isOpen ? 'is-open' : ''} ${isExiting ? 'is-exiting' : ''}`}>
-        <p className="welcome-kicker">A small corner of the internet</p>
+        <p className="welcome-kicker"><span>A small corner of the internet</span></p>
         <div className="welcome-orbit" aria-label="Site menu">
           <button
             className="welcome-core"
             type="button"
             aria-expanded={isOpen}
             aria-controls="welcome-menu-links"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             onClick={() => setIsOpen(open => !open)}
           >
             <svg className="welcome-name-ring" viewBox="0 0 100 100" aria-label="Eden Tioko Souare">
@@ -39,23 +40,22 @@ export default function WelcomeMenu() {
               </text>
             </svg>
             <span className="welcome-mobile-title">eden-net</span>
-            <span className="welcome-core-action">{isOpen ? 'close' : ' '}</span>
           </button>
 
           <div id="welcome-menu-links" className="welcome-links">
             <Link className="welcome-link welcome-link-about" to="/home" onClick={event => navigateFromMenu(event, '/home')}>
-              <span>01</span> <mark>About</mark>
+              <mark>About</mark>
             </Link>
             <Link className="welcome-link welcome-link-projects" to="/projects" onClick={event => navigateFromMenu(event, '/projects')}>
-              <span>02</span> <mark>Projects</mark>
+              <mark>Projects</mark>
             </Link>
             <Link className="welcome-link welcome-link-research" to="/research" onClick={event => navigateFromMenu(event, '/research')}>
-              <span>03</span> <mark>Research</mark>
+              <mark>Research</mark>
             </Link>
           </div>
         </div>
 
-        <p className="welcome-hint">Click the center to open the menu</p>
+        <p className="welcome-hint"><span>Click the center to open the menu</span></p>
 
         {/* <MusicPlayer /> */}
       </div>

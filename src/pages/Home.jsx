@@ -45,7 +45,6 @@ export default function Home() {
     <main className="about-page">
       <header className="about-banner">
         <div className="about-banner-overlay">
-          <p className="section-label">Eden-Net</p>
           <h2 className="speech-title" aria-label="Academic hub">
             {academicHubLetters.map((letter, index) => (
               <span
@@ -64,7 +63,7 @@ export default function Home() {
       <div className="about-layout">
         <article className="about-main">
           <p className="section-label">About</p>
-          <h1>Welcome to my corner of the internet. 👋</h1>
+          <h1>Welcome to my corner of the internet </h1>
           <p><strong>Hello, I'm Eden, an aspiring UX/HCI researcher.</strong></p>
           <p>I design human-centered digital systems that combine my knowledge of UX Research, Human-Computer Interaction, and Machine Learning. My work asks how people think, build trust, and make meaning while interacting with technology.</p>
           <p>I care about thoughtful interfaces, accessible experiences, and research that turns complicated questions into useful, everyday tools.</p>

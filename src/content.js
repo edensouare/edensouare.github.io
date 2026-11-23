@@ -1,5 +1,127 @@
 export const projects = [
   {
+    slug: 'nasa-space-explorer',
+    title: 'NASA Space Explorer',
+    subtitle: 'PWA & Space-Image Explorer Web App',
+    year: '2026',
+    header: 'How might we deliver an engaging, offline-capable NASA space-image explorer that follows NASA brand standards across desktop and mobile?',
+    tags: ['React', 'JavaScript', 'HTML/CSS', 'REST APIs', 'PWA'],
+    role: [
+      'Front-End Developer building a responsive React space-image explorer powered by NASA APIs and Progressive Web App offline caching',
+    ],
+    motivation: [
+      'Space imagery and mission data are rich educational resources, yet browsing large media archives across devices and unreliable connections often breaks down without careful responsive design and offline support.',
+      'NASA Space Explorer brings NASA APIs into a fast, brand-aligned gallery experience that remains usable even offline. (More details, motivation, and visuals coming soon.)',
+    ],
+    approach: [
+      {
+        heading: 'Responsive Space-Image Explorer & NASA Branding',
+        text: 'Built a responsive space-image explorer using NASA APIs, with date-range filtering, dynamic image galleries, and detail modals. Applied NASA’s brand guidelines for consistent colors, typography, and visual hierarchy.',
+      },
+      {
+        heading: 'Progressive Web App & Offline Experience',
+        text: 'Extended the app into a Progressive Web App with service worker caching, custom installation controls, notification permission requests, and a visible offline indicator.',
+      },
+      {
+        heading: 'Fallback Data Feed & Mobile Date Refinements',
+        text: 'Implemented a fallback NASA data feed to replace placeholder results while preserving the selected date range, and refined mobile date inputs to prevent layout overflow.',
+      },
+    ],
+  },
+  {
+    slug: 'loreal-beauty-advisor',
+    title: 'L’Oréal Beauty Advisor & Routine Builder',
+    subtitle: 'AI Chatbot & Personalized Routine Web App',
+    year: '2026',
+    header: 'How might we combine a curated product catalog with conversational AI to help users discover products and build personalized beauty routines?',
+    tags: ['JavaScript', 'HTML/CSS', 'OpenAI API', 'Cloudflare Workers'],
+    role: [
+      'Front-End & AI Integration Developer building the branded advisor chatbot, 35-product routine builder, and Cloudflare Workers OpenAI integration',
+    ],
+    motivation: [
+      'Navigating large beauty and skincare catalogs can be overwhelming when shoppers are unsure which products fit their needs or how to combine them into an effective routine.',
+      'This project pairs an interactive 35-product catalog with a branded AI beauty advisor to turn discovery into a guided, conversational routine-building experience. (More details, motivation, and visuals coming soon.)',
+    ],
+    approach: [
+      {
+        heading: 'Branded Beauty-Advisor Chatbot',
+        text: 'Built a branded beauty-advisor chatbot with conversational context, suggested questions, and topic checks to guide relevant product recommendations.',
+      },
+      {
+        heading: 'Routine Builder & 35-Product Catalog',
+        text: 'Extended the chatbot into a routine builder using a 35-product catalog, enabling users to search and filter products, view descriptions, and save selections with localStorage.',
+      },
+      {
+        heading: 'OpenAI Integration, Web Search & RTL Support',
+        text: 'Integrated selected product data and conversation history with the OpenAI API to generate personalized routines and answer follow-up questions; added web search with source citations and RTL layout support.',
+      },
+      {
+        heading: 'Prompt Testing & Readability Refinement',
+        text: 'Refined AI prompts through testing to address incorrectly rejected product questions and improve response length and readability within the chat interface.',
+      },
+    ],
+  },
+  {
+    slug: 'jerry-can-relay',
+    title: 'Jerry Can Relay',
+    subtitle: 'charity: water Game Prototype',
+    year: '2026',
+    header: 'How might an interactive browser game communicate the physical challenge of carrying clean water from a distant well?',
+    tags: ['HTML/CSS', 'JavaScript', 'Game Prototyping', 'Interaction Design'],
+    role: [
+      'Game & Interaction Designer prototyping browser-based balancing controls, difficulty modes, and live HUD feedback',
+    ],
+    motivation: [
+      'Interactive games can make abstract global challenges tangible by letting players experience constraints directly through mechanics and live feedback.',
+      'Jerry Can Relay is a browser game prototype inspired by charity: water that translates the effort of transporting water into a responsive balancing challenge. (More details, motivation, and visuals coming soon.)',
+    ],
+    approach: [
+      {
+        heading: 'Balancing Controls & Clean Water Theme',
+        text: 'Designed and built a browser game on clean water access where players balance a jerry can using tap or keyboard controls.',
+      },
+      {
+        heading: 'Difficulty Levels & Live Feedback',
+        text: 'Implemented three difficulty levels, timed rounds, and live feedback on water remaining and distance to the well.',
+      },
+    ],
+  },
+  {
+    slug: 'intel-sustainability',
+    title: 'Intel Sustainability',
+    subtitle: 'Event Check-In App & Interactive Timeline',
+    year: '2026',
+    header: 'How might we present sustainability milestones accessibly across languages while streamlining live event check-ins for attendees and teams?',
+    tags: ['HTML/CSS', 'JavaScript', 'DOM Manipulation', 'Web Storage API', 'Flexbox', 'Bootstrap', 'Responsive Design', 'Accessibility'],
+    role: [
+      'Web Developer building two front-end projects for Intel® Sustainability: a persistent event check-in app and an accessible interactive milestone timeline',
+    ],
+    motivation: [
+      'Two complementary web projects exploring Intel® Sustainability from both a live event operations angle and a public storytelling angle.',
+      'Together, they combine real-time DOM state management and localStorage persistence with accessible, multilingual-ready responsive design. (More details and visuals coming soon.)',
+    ],
+    approach: [
+      {
+        heading: 'Event Check-In App (Oct 2026)',
+        list: [
+          'Built a check-in app for up to 50 attendees with a live roster and attendance counts across three teams',
+          'Saved check-ins with localStorage to preserve attendee records across page refreshes',
+        ],
+      },
+      {
+        heading: 'Interactive Timeline (Sep 2026)',
+        list: [
+          'Built a responsive timeline of Intel’s sustainability milestones with keyboard-accessible cards and collapsible navigation',
+          'Added right-to-left layout switching for translated pages and screen reader labels that communicate navigation state',
+        ],
+      },
+    ],
+    links: [
+      { label: 'Intel® Sustainability Interactive Timeline', href: 'https://edensouare.github.io/02-prj-intel-sustainability/' },
+      { label: 'Intel® Sustainability Summit Event Check-In App', href: 'https://edensouare.github.io/05-prj-intel-event-check-in/' },
+    ],
+  },
+  {
   slug: 'access-as-ownership',
   title: 'Access as Ownership',
   subtitle: 'CoBank x Early Talent Competitions: Reimagine the Customer Experience (1st Place)',
@@ -361,15 +483,16 @@ export const research = [
     title: 'Text Classification of Research Articles',
     subtitle: 'Sungkyunkwan University AAA Lab Internship',
     year: '2025-Current',
-    header: 'How can machine learning streamline literature review in AI trust research?',
-    tags: ['ML', 'Natural Language Processing', 'Text Classification', 'Python'],
+    header: 'How can machine learning help researchers find and screen studies on AI overreliance?',
+    tags: ['Machine Learning', 'Natural Language Processing', 'Text Classification', 'API Integration', 'Python'],
     role: [
-      'HCI Intern & Machine Learning Engineer developing classification pipeline',
+      'HCI Intern & Machine Learning Engineer developing classification pipeline, 2025',
+      'Remote Undergraduate Research Intern, 2026',
     ],
     credits: ['Advised by Joo-Wha Hong and Hyo-Jeong Kim'],
     motivation: [
         'Literature reviews are essential but time-consuming...especially in rapidly evolving fields like AI trust and overreliance.',
-        'This project aims to automate and streamline the screening process, enabling researchers to focus on analysis rather than manual filtering.'
+        'This project aims to automate and streamline the screening process, enabling researchers to focus on analysis rather than manual filtering.',
     ],
     links: [
       { label: 'Research Internship Activity Report 2025', href: 'https://docs.google.com/document/d/1-aYKIvkNsrTSjclvHeCwmB61P5EOKFhDM5sBm7O0f28/edit?usp=sharing' }
@@ -388,9 +511,8 @@ export const research = [
       },
     ],
     ongoing: [
-      'Prototyped GPT-4o integration to enhance article screening efficiency:',
-      'Developed API-based abstract analysis workflow',
-      'Currently conducting pilot tests...'
+      'Extended the abstract screening workflow by integrating the TypeSafe and Anthropic APIs in Python.',
+      'Tested both integrations on a 19 article pilot test using the lab’s seven exclusion criteria and eight inclusion criteria for studies on AI overreliance.',
     ],
   },
   {

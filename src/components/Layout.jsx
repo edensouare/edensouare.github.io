@@ -14,7 +14,7 @@ export default function Layout({ children }) {
       <aside className="sidebar" aria-label="Site navigation">
         <header className="profile-top">
           <h1>Eden Souare</h1>
-          <p className="text-muted">Exploring UX, HCI, and ML📍Dallas, Texas & New York, USA</p>
+          <p className="text-muted">Exploring UX, HCI, and ML | Texas & New York, USA</p>
         </header>
 
         <nav className="nav-menu" aria-label="Primary">
