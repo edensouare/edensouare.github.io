@@ -2,30 +2,55 @@ export const projects = [
   {
     slug: 'nasa-space-explorer',
     title: 'NASA Space Explorer',
-    subtitle: 'PWA & Space-Image Explorer Web App',
+    subtitle: 'Science Discovery Through Responsive Design & Web Development',
     year: '2026',
-    header: 'How might we deliver an engaging, offline-capable NASA space-image explorer that follows NASA brand standards across desktop and mobile?',
-    tags: ['React', 'JavaScript', 'HTML/CSS', 'REST APIs', 'PWA'],
+    header: 'How might we turn NASA’s daily space imagery into an approachable discovery experience across devices and connection conditions?',
+    tags: ['Interaction Design', 'Responsive Design', 'React', 'JavaScript', 'REST APIs', 'PWA'],
     role: [
-      'Front-End Developer building a responsive React space-image explorer powered by NASA APIs and Progressive Web App offline caching',
+      'Designer & Front-End Developer building an interactive NASA image explorer, integrating the Astronomy Picture of the Day API and applying NASA’s brand guidelines across desktop and mobile',
+    ],
+    images: [
+      {
+        src: 'images/nasa-space-explorer/nasa-gallery.jpg',
+        alt: 'NASA Space Explorer showing date filters and a gallery of space images',
+        caption: 'Date-range filters and image cards provide a clear path from selecting a period to discovering NASA content.',
+      },
+      {
+        src: 'images/nasa-space-explorer/nasa-image-details.jpg',
+        alt: 'An image detail modal showing NGC 7129 with its date and scientific explanation',
+        caption: 'Selecting an image reveals its scientific context while keeping the gallery available in the background.',
+      },
+      {
+        src: 'images/nasa-space-explorer/nasa-install-guidance.jpg',
+        alt: 'NASA Space Explorer displaying installation guidance alongside notification controls',
+        caption: 'Installation guidance helps visitors understand how to access the app from their device’s Home Screen.',
+      },
     ],
     motivation: [
-      'Space imagery and mission data are rich educational resources, yet browsing large media archives across devices and unreliable connections often breaks down without careful responsive design and offline support.',
-      'NASA Space Explorer brings NASA APIs into a fast, brand-aligned gallery experience that remains usable even offline. (More details, motivation, and visuals coming soon.)',
+      'NASA’s mission includes sharing the wonder of space with people around the world. This project explores how an interactive app can support that mission by making space imagery easy and fun to discover.',
+      'I built an experience where users choose a date range, browse the Astronomy Pictures of the Day, and open an image to learn about the science behind it. NASA’s brand guidelines guided the visual design, giving the app a consistent identity while keeping the imagery at the center of the experience.',
     ],
     approach: [
       {
-        heading: 'Responsive Space-Image Explorer & NASA Branding',
-        text: 'Built a responsive space-image explorer using NASA APIs, with date-range filtering, dynamic image galleries, and detail modals. Applied NASA’s brand guidelines for consistent colors, typography, and visual hierarchy.',
+        "heading": "Browsing Flow & Visual Hierarchy",
+        "text": "I organized the app around choosing dates, browsing images, and opening an entry. Titles and dates help users scan the gallery, while a detail modal provides the scientific explanation without taking them away from their results."
       },
       {
-        heading: 'Progressive Web App & Offline Experience',
-        text: 'Extended the app into a Progressive Web App with service worker caching, custom installation controls, notification permission requests, and a visible offline indicator.',
+        "heading": "NASA Branding & Responsive Design",
+        "text": "I used NASA’s brand guidelines to guide the colors and visual styling, keeping the images central to the page. On mobile, I stacked the date controls and adjusted input sizing after finding that the dates overflowed their container."
       },
       {
-        heading: 'Fallback Data Feed & Mobile Date Refinements',
-        text: 'Implemented a fallback NASA data feed to replace placeholder results while preserving the selected date range, and refined mobile date inputs to prevent layout overflow.',
+        "heading": "API Integration & Error Recovery",
+        "text": "I built the app with React, JavaScript, and HTML/CSS, using NASA APIs to load content for the selected dates. When the primary API returned placeholder logos, I added a fallback feed that finds real entries within the same date range. Loading states, validation, and error messages help explain what is happening."
       },
+      {
+        "heading": "Installation & Offline Access",
+        "text": "I added PWA installation controls, service worker caching, and notification permission requests. Previously loaded content can remain available offline, with an indicator showing connection status. Installation guidance also accounts for browsers that require users to add the app through their browser menu."
+      },
+      {
+        "heading": "Next Steps",
+        "text": "I would test whether users can select dates, find an image, and open its details without help, especially on mobile. I would also check whether the installation instructions and offline indicator make sense before assessing whether these features encourage people to return."
+      }
     ],
   },
   {

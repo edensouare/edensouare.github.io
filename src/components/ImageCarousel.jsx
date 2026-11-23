@@ -14,14 +14,19 @@ export default function ImageCarousel({ images, title }) {
   }
 
   const currentImage = images[currentIndex]
+  const imageSrc = typeof currentImage === 'string' ? currentImage : currentImage.src
+  const imageAlt = typeof currentImage === 'string'
+    ? `${title}, image ${currentIndex + 1} of ${images.length}`
+    : currentImage.alt
+  const imageCaption = typeof currentImage === 'string' ? null : currentImage.caption
 
   return (
     <div className="image-carousel" aria-label={`${title} image gallery`}>
       <div className="carousel-viewport">
         <img
           className="detail-image"
-          src={`/${currentImage}`}
-          alt={`${title}, image ${currentIndex + 1} of ${images.length}`}
+          src={`/${imageSrc.replace(/^\//, '')}`}
+          alt={imageAlt}
         />
         {images.length > 1 && (
           <>
@@ -44,13 +49,16 @@ export default function ImageCarousel({ images, title }) {
           </>
         )}
       </div>
+      {imageCaption && (
+        <p className="carousel-caption-text" aria-live="polite">{imageCaption}</p>
+      )}
       {images.length > 1 && (
         <div className="carousel-controls">
           <span aria-live="polite">Image {currentIndex + 1} of {images.length}</span>
           <div className="carousel-dots" aria-label="Choose an image">
             {images.map((image, index) => (
               <button
-                key={image + index}
+                key={`${typeof image === 'string' ? image : image.src}-${index}`}
                 className={`carousel-dot ${index === currentIndex ? 'is-active' : ''}`}
                 type="button"
                 onClick={() => setCurrentIndex(index)}

@@ -628,6 +628,14 @@ body {
 .carousel-button-previous { left: 16px; }
 .carousel-button-next { right: 16px; }
 
+.carousel-caption-text {
+  margin: 12px 0 0;
+  max-width: 70ch;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 .carousel-controls {
   display: flex;
   align-items: center;
