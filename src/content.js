@@ -30,115 +30,289 @@ export const projects = [
       'NASA’s mission includes sharing the wonder of space with people around the world. This project explores how an interactive app can support that mission by making space imagery easy and fun to discover.',
       'I built an experience where users choose a date range, browse the Astronomy Pictures of the Day, and open an image to learn about the science behind it. NASA’s brand guidelines guided the visual design, giving the app a consistent identity while keeping the imagery at the center of the experience.',
     ],
+    videoUrl: '/images/nasa-space-explorer/nasa-pwa-demo.gif',
+    videoTitle: 'Installable Mobile App',
+    videoAlt: 'Animated GIF of a mobile screen recording showing NASA Space Explorer installed to a device Home Screen, able to work when offline, and configured to send notifications.',
+    videoCaption: 'Mobile screen recording showing NASA Space Explorer installed to a device Home Screen, able to work when offline, and configured to send notifications.',
     approach: [
-      {
-        "heading": "Browsing Flow & Visual Hierarchy",
-        "text": "I organized the app around choosing dates, browsing images, and opening an entry. Titles and dates help users scan the gallery, while a detail modal provides the scientific explanation without taking them away from their results."
-      },
-      {
-        "heading": "NASA Branding & Responsive Design",
-        "text": "I used NASA’s brand guidelines to guide the colors and visual styling, keeping the images central to the page. On mobile, I stacked the date controls and adjusted input sizing after finding that the dates overflowed their container."
-      },
-      {
-        "heading": "API Integration & Error Recovery",
-        "text": "I built the app with React, JavaScript, and HTML/CSS, using NASA APIs to load content for the selected dates. When the primary API returned placeholder logos, I added a fallback feed that finds real entries within the same date range. Loading states, validation, and error messages help explain what is happening."
-      },
-      {
-        "heading": "Installation & Offline Access",
-        "text": "I added PWA installation controls, service worker caching, and notification permission requests. Previously loaded content can remain available offline, with an indicator showing connection status. Installation guidance also accounts for browsers that require users to add the app through their browser menu."
-      },
-      {
-        "heading": "Next Steps",
-        "text": "I would test whether users can select dates, find an image, and open its details without help, especially on mobile. I would also check whether the installation instructions and offline indicator make sense before assessing whether these features encourage people to return."
-      }
+  {
+    heading: 'The Business Case & Stakeholder Needs',
+    text: 'I framed the app around people curious about space and NASA’s goal of sharing scientific discoveries with a wider audience. Visitors need an easy way to find interesting images and understand what they show. The opportunity is to make NASA’s existing educational content more approachable through an interactive browsing experience.',
+    list: [
+      'Let visitors choose a period, explore its images, and read the science behind an entry.',
+      'Use NASA’s brand guidelines to give the experience a consistent visual identity.',
+      'Connect the interface to NASA APIs so the gallery draws from published content without manual image entry.',
+    ],
+  },
+  {
+    heading: 'Discovery Flow: From Dates to Images',
+    text: 'I organized the experience around choosing a date range, browsing the gallery, and opening an image. Titles and dates give visitors enough context to scan the results. A detail modal brings the larger image and explanation into view while keeping their gallery in the background.',
+    list: [
+      'Labeled date fields and a clear search button establish where to begin.',
+      'Date validation helps visitors correct their selection before requesting images.',
+      'Opening and closing image details lets visitors move between quick browsing and deeper reading.',
+    ],
+  },
+  {
+    heading: 'Visual Design, Responsive Layout & Accessibility',
+    text: 'I used NASA’s logo and brand colors to connect the app to its source, with space imagery as the main focus. A responsive grid adjusts the gallery to the available width, while date controls stack on smaller screens.',
+    list: [
+      'Image cards support keyboard activation and include accessible names for opening details.',
+      'Visible focus indicators and labeled controls help users identify and operate interactive elements.',
+      'After finding that mobile date inputs overflowed their container, I adjusted their sizing to keep the fields and search action readable.',
+    ],
+  },
+  {
+    heading: 'Web Development & NASA API Integration',
+    text: 'I built the app with React, JavaScript, and HTML/CSS, using NASA APIs to retrieve images and descriptions for the selected dates. Loading feedback shows when a request is in progress, and error messages explain when content cannot be retrieved.',
+    list: [
+      'The gallery handles image entries and provides a separate link for video entries.',
+      'When the primary API returned NASA logo placeholders, I added a fallback feed and filtered its entries to the selected date range.',
+      'The fallback depends on the entries available from NASA. If usable content is unavailable, the app asks visitors to try another range.',
+    ],
+  },
+  {
+    heading: 'PWA Installation & Offline Access',
+    text: 'I extended the app into a Progressive Web App so visitors can add it to their Home Screen. A web app manifest defines the installed experience, and a service worker caches app resources and NASA responses. Installation guidance accounts for browsers that require a manual Add to Home Screen flow.',
+    list: [
+      'An offline indicator communicates connection status and helps set expectations about content availability.',
+      'Notification controls request permission and send a test notification when supported.',
+      'Mobile testing exposed gaps in offline image loading and installed-app startup. These became additional development tasks to verify before treating offline access as complete.',
+    ],
+  },
+  {
+    heading: 'Iteration: Data Reliability & Mobile Behavior',
+    text: 'Testing the app across browser and mobile contexts revealed problems beyond the gallery layout. API requests sometimes returned placeholder logos, offline searches exposed technical errors, and the installed app encountered a blank screen when built assets pointed to the wrong deployment path. Each issue affected whether visitors could reach the content at all.',
+    list: [
+      'Added a fallback data source to recover usable images within the requested dates.',
+      'Prepared an offline update that explicitly saves gallery images and restores the last saved gallery, with feedback when saving is incomplete.',
+      'Corrected asset paths for deployment under the GitHub Pages subdirectory.',
+      'Build and simulated caching checks passed. The offline and Home Screen fixes still need confirmation on a physical phone.',
+    ],
+  },
+  {
+    heading: 'What I Would Measure Next',
+    text: 'I would run task-based sessions asking visitors to choose dates, open an image, find its explanation, and return to the gallery. I would also test installation and reopening saved content offline to see whether the instructions and status messages match what people expect.',
+    list: [
+      'Measure successful searches, date-selection errors, and completion of the image-detail task across desktop and mobile.',
+      'Check whether visitors understand which content is available offline and what requires a connection.',
+      'Ask what they learned from an entry and whether the experience made them want to explore more.',
+      'Use image-detail opens and return visits as indicators to investigate educational engagement, alongside participant feedback.',
+    ],
+  },
+],
+    links: [
+      { label: 'Try It Yourself!', href: 'https://edensouare.github.io/07-nasa-space-explorer/' },
     ],
   },
   {
     slug: 'loreal-beauty-advisor',
     title: 'L’Oréal Beauty Advisor & Routine Builder',
-    subtitle: 'AI Chatbot & Personalized Routine Web App',
+    subtitle: 'Conversational Product Discovery · UX & Web Development',
     year: '2026',
-    header: 'How might we combine a curated product catalog with conversational AI to help users discover products and build personalized beauty routines?',
-    tags: ['JavaScript', 'HTML/CSS', 'OpenAI API', 'Cloudflare Workers'],
+    header: 'How might we help shoppers move from a beauty question to a product selection and a routine they understand?',
+    tags: ['Interaction Design', 'Responsive Web Design', 'JavaScript', 'HTML/CSS', 'OpenAI API', 'Cloudflare Workers'],
     role: [
-      'Front-End & AI Integration Developer building the branded advisor chatbot, 35-product routine builder, and Cloudflare Workers OpenAI integration',
+      'Designer & Front-End Developer shaping the discovery flow, brand-inspired interface, product selection, and conversational interactions across two web apps',
+      'Integrated the product catalog, browser storage, and OpenAI API through Cloudflare Workers',
+    ],
+    credits: [
+      'Independent coursework and portfolio concept, developed without a client relationship with L’Oréal',
+      'L’Oréal branding and product imagery belong to their respective owners. Product data came from the supplied project catalog.',
+    ],
+    images: [
+      {
+        src: 'images/loreal/beauty-advisor.webp',
+        alt: 'Beauty Advisor desktop interface with topic buttons, four suggested questions, and a chat input beside a RevitaLift product feature',
+        caption: 'Beauty Advisor: topic buttons, questions that send on selection, and an open message field offer different ways to begin.',
+      },
+      {
+        src: 'images/loreal/routine-builder.webp',
+        alt: 'Routine Builder desktop interface with product search, category filters, CeraVe product cards, a selection panel, and a beauty-advisor chat',
+        caption: 'Routine Builder: the catalog, selection panel, and advisor share one workspace so shoppers can see what will inform their routine.',
+      },
     ],
     motivation: [
-      'Navigating large beauty and skincare catalogs can be overwhelming when shoppers are unsure which products fit their needs or how to combine them into an effective routine.',
-      'This project pairs an interactive 35-product catalog with a branded AI beauty advisor to turn discovery into a guided, conversational routine-building experience. (More details, motivation, and visuals coming soon.)',
+      'A shopper can recognize a beauty goal without knowing which product to choose or how to use it alongside other products. I explored how a branded web experience could make that transition easier, first through a conversational advisor and then through a routine builder grounded in the shopper’s own selection.',
+      'For a beauty brand, helping people understand product roles could support more informed consideration and a clearer path to official product information. Purchase confidence and continued engagement are hypotheses for future evaluation. Commercial impact has yet to be measured.',
     ],
     approach: [
       {
-        heading: 'Branded Beauty-Advisor Chatbot',
-        text: 'Built a branded beauty-advisor chatbot with conversational context, suggested questions, and topic checks to guide relevant product recommendations.',
+        heading: 'The Business Case & Stakeholder Needs',
+        text: 'I framed the experience around shoppers who need practical guidance and a brand that needs its product information represented clearly. The shopper’s goal is to understand what fits their needs and how to use it. The brand’s opportunity is to make discovery and consideration more useful, while keeping AI-generated advice distinguishable from official product information.',
+        list: [
+          'Help shoppers begin with their goal, browse relevant products, and understand the role of each selection.',
+          'Give product and brand teams a visible route back to official information through product links and returned source citations.',
+          'Give the development flow a defined boundary: the routine uses selected catalog records, and the API credential stays in Cloudflare’s secret settings.',
+        ],
       },
       {
-        heading: 'Routine Builder & 35-Product Catalog',
-        text: 'Extended the chatbot into a routine builder using a 35-product catalog, enabling users to search and filter products, view descriptions, and save selections with localStorage.',
+        heading: 'Beauty Advisor: Supporting Different Starting Points',
+        text: 'The first app supports visitors who arrive with a question but may be unsure how to phrase it. I paired topic buttons with complete suggested questions that send immediately, alongside a field for an original question. Conversational context lets people refine their request without starting over.',
+        list: [
+          'Suggested questions reduce the effort of composing the first message. Topic buttons offer a broader way to explore.',
+          'Distinct, labeled message bubbles keep each question connected to its reply.',
+          'The product feature and official product-page link connect the conversation to the brand’s catalog.',
+        ],
       },
       {
-        heading: 'OpenAI Integration, Web Search & RTL Support',
-        text: 'Integrated selected product data and conversation history with the OpenAI API to generate personalized routines and answer follow-up questions; added web search with source citations and RTL layout support.',
+        heading: 'Routine Builder: Making the Selection Visible',
+        text: 'The second app turns the open conversation into a more structured browsing and selection flow. Shoppers search a 35-product catalog and filter by category, open descriptions, and choose the products they want to include. A separate selection panel makes the inputs visible before generation.',
+        list: [
+          'Selected states and removal controls let shoppers review and revise their choices in either the grid or the selection list.',
+          'Expandable descriptions reveal product information on demand without relying on hover.',
+          'localStorage restores selected products after a reload. A clear-all control gives shoppers a way to reset.',
+          'The generated routine uses a snapshot of the selection. If products change afterward, a message explains that regeneration is needed.',
+        ],
       },
       {
-        heading: 'Prompt Testing & Readability Refinement',
-        text: 'Refined AI prompts through testing to address incorrectly rejected product questions and improve response length and readability within the chat interface.',
+        heading: 'Visual Design, Responsive Layout & Accessibility',
+        text: 'I used L’Oréal-inspired typography, product imagery, and restrained interface styling to make the advisor feel connected to a beauty-shopping experience. The routine builder adds the assignment’s pink and gold brand accents. CSS grid and responsive controls adapt the catalog and consultation to smaller screens.',
+        list: [
+          'Product selection buttons expose their pressed state, and labeled form controls support keyboard and assistive-technology use.',
+          'A right-to-left layout toggle adjusts the grid, selection area, and chat. It changes layout direction while keeping the interface labels in English.',
+        ],
+      },
+      {
+        heading: 'Web Development & Product-Aware AI',
+        text: 'I built the interfaces in HTML, CSS, and JavaScript. The routine builder loads products.json and sends only the selected product records, including name, brand, category, and description, with the shopper’s optional goals. Cloudflare Workers handle OpenAI requests, and follow-ups include the conversation history for context.',
+        list: [
+          'Web search can retrieve current product information, with returned source annotations rendered as clickable citations.',
+          'Loading states prevent duplicate submissions. Failed requests retain the previous conversation and give the shopper a retry path.',
+          'The apps demonstrate discovery and routine guidance. Checkout, live inventory, and verified product compatibility would require further integration.',
+        ],
+      },
+      {
+        heading: 'Iteration: Relevance & Readability',
+        text: 'Testing exposed two weaknesses in the conversation. A topic check rejected a valid request to search official brand sites, even after a skincare routine had been generated. I revised the scope instructions to recognize product research and requests for citations. A later response was too long and included a table that the chat could not display well, so I specified concise, plain-text answers and numbered routine steps.',
+        list: [
+          'I checked product-research requests alongside unrelated SQL questions and attempts to override the topic rules.',
+          'These were functional checks and design iterations. I have not yet conducted a formal usability study or measured commercial impact.',
+        ],
+      },
+      {
+        heading: 'What I Would Measure Next',
+        text: 'I would run task-based sessions asking shoppers to find a product, inspect its description, revise a selection, generate a routine, and ask a follow-up. The next step is to establish whether the flow helps people understand their choices before assessing its value to a brand.',
+        list: [
+          'Measure task completion, time to a first routine, selection errors, and whether shoppers can explain the recommended order.',
+          'Ask shoppers to rate confidence in their selection and distinguish AI guidance from verified product information.',
+          'Track generation completion and visits to official product sources, with consent and appropriate analytics. Use these indicators to investigate where the experience helps or loses shoppers.',
+        ],
       },
     ],
+    links: [
+      { label: 'Try the Beauty Advisor', href: 'https://edensouare.github.io/08-prj-loreal-chatbot/' },
+      { label: 'Try the Routine Builder', href: 'https://edensouare.github.io/09-prj-loreal-routine-builder/' },
+       ],
   },
   {
     slug: 'jerry-can-relay',
     title: 'Jerry Can Relay',
-    subtitle: 'charity: water Game Prototype',
+    subtitle: 'Designing a Browser Game for charity: water’s Campus Outreach',
     year: '2026',
-    header: 'How might an interactive browser game communicate the physical challenge of carrying clean water from a distant well?',
-    tags: ['HTML/CSS', 'JavaScript', 'Game Prototyping', 'Interaction Design'],
-    role: [
-      'Game & Interaction Designer prototyping browser-based balancing controls, difficulty modes, and live HUD feedback',
+    header: 'How might a game students can play between classes give them a reason to learn more about clean water access?',
+    tags: ['Interaction Design', 'Game Design', 'Responsive Web Development', 'HTML/CSS', 'JavaScript'],
+    role: ['Game Designer & Front-End Developer translating a three-week nonprofit marketing brief into a playable browser prototype'],
+    images: [
+      {
+        src: 'images/jerry-can-relay/relay-walk.jpg',
+        alt: 'Hands hold a blue water can as the well comes into view. The display shows 1.9 km remaining and 100% water.',
+        caption: 'Players watch the can for tilt and tap to correct it. Distance, time, and water remaining stay visible throughout the walk.',
+      },
+      {
+        src: 'images/jerry-can-relay/relay-start.jpg',
+        alt: 'Jerry Can Relay start screen with Easy, Normal, and Hard difficulty options and a Start walk button.',
+        caption: 'The opening screen introduces the goal in one sentence, with Easy selected so a first-time player can start immediately.',
+      },
     ],
     motivation: [
-      'Interactive games can make abstract global challenges tangible by letting players experience constraints directly through mechanics and live feedback.',
-      'Jerry Can Relay is a browser game prototype inspired by charity: water that translates the effort of transporting water into a responsive balancing challenge. (More details, motivation, and visuals coming soon.)',
+      'Time spent collecting water can take time away from school and work. For a college student encountering charity: water for the first time, that daily trade-off can be hard to picture.',
+      'I built Jerry Can Relay around one question a player can answer in a single round: how much water can you keep in a five-liter can as it tips from side to side?',
     ],
     approach: [
       {
-        heading: 'Balancing Controls & Clean Water Theme',
-        text: 'Designed and built a browser game on clean water access where players balance a jerry can using tap or keyboard controls.',
+        heading: 'The Business Case & Stakeholder Needs',
+        text: 'The accelerator brief asked how charity: water could reach college students through a mobile game and floated campus discounts as a possible incentive. I scoped the prototype around the first engagement decision: would a student finish a short walk and want to know more? A browser game gave students a way to try it from a link, while the home screen gave the nonprofit a direct route to its mission and donation pages.',
       },
       {
-        heading: 'Difficulty Levels & Live Feedback',
-        text: 'Implemented three difficulty levels, timed rounds, and live feedback on water remaining and distance to the well.',
+        heading: 'Balancing the Jerry Can',
+        text: 'I made the jerry can the object students have to watch. When it leans right, tapping the left half of the screen pulls it back. On a keyboard, the arrow keys or A and D make the same correction. Making each half of the play area a target lets players keep their eyes on the can as it moves.',
       },
+      {
+        heading: 'Showing the Cost of a Spill',
+        text: 'The tilt shows what needs attention now. The water gauge shows what an earlier correction cost, and the distance and time readouts tell players how much of the walk remains. At the finish, I translate the remaining percentage back into liters so the score answers the question the player started with.',
+      },
+      {
+        heading: 'Building and Tuning the Game in JavaScript',
+        text: 'I built the title, walk, and results screens in HTML and CSS. JavaScript tracks tilt, water, distance, and time as the round progresses. Easy, Normal, and Hard share the same controls. On harder settings the can starts spilling heavily at a smaller angle, so returning players can take on a tighter balancing challenge without learning a new interaction.',
+      },
+      {
+        heading: 'From a Finished Round to Mission Awareness',
+        text: 'The result screen pairs the player’s outcome with a fact about water access. In a campus pilot, I would track round completion and visits to the mission page separately, then ask students what they remember about water collection. That would help charity: water judge whether the game holds attention and whether its message carries beyond the score.',
+      },
+    ],
+    links: [
+      { label: 'Play Jerry Can Relay', href: 'https://edensouare.github.io/05-charity-water-game-prototype/' },
     ],
   },
   {
     slug: 'intel-sustainability',
     title: 'Intel Sustainability',
-    subtitle: 'Event Check-In App & Interactive Timeline',
+    subtitle: 'A Sustainability Timeline & Team-Based Summit Check-In',
     year: '2026',
-    header: 'How might we present sustainability milestones accessibly across languages while streamlining live event check-ins for attendees and teams?',
-    tags: ['HTML/CSS', 'JavaScript', 'DOM Manipulation', 'Web Storage API', 'Flexbox', 'Bootstrap', 'Responsive Design', 'Accessibility'],
+    header: 'How might we make Intel’s sustainability milestones easier to explore and show employees how each check-in counts toward their team’s turnout?',
+    tags: ['Interaction Design', 'Accessibility', 'Responsive Web Design', 'JavaScript', 'Flexbox', 'Bootstrap', 'Web Storage API'],
     role: [
-      'Web Developer building two front-end projects for Intel® Sustainability: a persistent event check-in app and an accessible interactive milestone timeline',
+    'UX Designer & Front-End Developer who designed and built Intel’s interactive sustainability timeline and a summit check-in prototype that tracks attendance by team',
+    ],
+    images: [
+      {
+        src: 'images/intel-sustainability/timeline.jpg',
+        alt: 'Intel sustainability timeline with the 2022 net-zero milestone expanded',
+        caption: 'The card pairs the announcement year with the 2040 target. Revealing the description gives readers more context without leaving the timeline.',
+      },
+      {
+        src: 'images/intel-sustainability/summit.jpg',
+        alt: 'Summit check-in interface confirming a sample attendee joined Team Water Wise',
+        caption: 'A personalized greeting confirms the team selection, and the same check-in advances the shared attendance goal.',
+      },
     ],
     motivation: [
-      'Two complementary web projects exploring Intel® Sustainability from both a live event operations angle and a public storytelling angle.',
-      'Together, they combine real-time DOM state management and localStorage persistence with accessible, multilingual-ready responsive design. (More details and visuals coming soon.)',
+      'The Intel brief gave me two audiences with different reasons to care about sustainability. A visitor might want to know when Intel set its net-zero goal. An employee arriving at the summit wants to check in and see how their team is doing. I built a timeline for the first question and a check-in app for the second.',
     ],
     approach: [
       {
-        heading: 'Event Check-In App (Oct 2026)',
+        heading: 'The Business Case & Stakeholder Needs',
+        text: 'For the communications team, the opportunity was to make individual commitments easy to find and give interested readers a way to follow future updates. For summit organizers, the immediate need was a reliable count at the check-in desk. I used those needs to decide what each audience should see first: dated milestones for readers and a short form for attendees.',
+      },
+      {
+        heading: 'Sustainability Timeline (September 2026)',
+        text: 'I gave each of the nine milestones a year, a short title and an image so readers could scan from Intel’s founding in 1968 to the 2024 Sustainability Summit. Someone looking for the net-zero commitment can spot the 2022 card, then reveal its explanation. The year marks the announcement and the title identifies 2040 as the target.',
         list: [
-          'Built a check-in app for up to 50 attendees with a live roster and attendance counts across three teams',
-          'Saved check-ins with localStorage to preserve attendee records across page refreshes',
+          'Used Flexbox to adapt the timeline across screen sizes and made card descriptions available by hover, keyboard focus and touch.',
+          'Grouped RISE Strategy, Commitment, and Water & Waste in a responsive Bootstrap section. An accordion lets readers explore one topic at a time.',
         ],
       },
       {
-        heading: 'Interactive Timeline (Sep 2026)',
+        heading: 'Adapting the Timeline for a Global Audience',
+        text: 'A follow-up brief asked how the same page would work for someone reading in Arabic. I used JavaScript to detect changes in page language or direction and switch to the matching Bootstrap stylesheet. That keeps layout direction aligned with translated content.',
         list: [
-          'Built a responsive timeline of Intel’s sustainability milestones with keyboard-accessible cards and collapsible navigation',
-          'Added right-to-left layout switching for translated pages and screen reader labels that communicate navigation state',
+          'Collapsible navigation reports its expanded state to assistive technology, so a keyboard or screen reader user can tell whether the links are available.',
+          'The newsletter prototype uses a labeled email field with format validation. Submitting a valid address displays a demo notice.',
         ],
+      },
+      {
+        heading: 'Summit Check-In & Team Competition (October 2026)',
+        text: 'I used a simple game mechanic: each check-in adds one to a team’s turnout and moves everyone toward a shared goal of 50 attendees. Employees enter their name, choose Water Wise, Net Zero or Renewables, and receive a personal greeting. The organizer can see the new roster entry and updated counts immediately.',
+        list: [
+          'JavaScript normalizes capitalization and spacing before checking for a repeated name, so submitting the same name twice does not award a second point.',
+          'At the goal, the app announces the team or teams with the highest turnout. Check-in stays open after the 50th arrival.',
+          'Browser local storage restores the roster and counts after a refresh on the same device. This supports a single check-in station.',
+        ],
+      },
+      {
+        heading: 'How I Would Evaluate the Designs',
+        text: 'For the timeline, I would ask readers to find the net-zero target using a keyboard, a phone and a right-to-left layout, then record whether they found the correct year without help. At the summit desk, I would time a first check-in and ask attendees which team received their point. Together, those tasks would show whether people can find the commitment and understand the feedback.',
       },
     ],
     links: [

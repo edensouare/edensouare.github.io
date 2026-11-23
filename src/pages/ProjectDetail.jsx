@@ -133,19 +133,39 @@ export default function ProjectDetail({ isResearch = false }) {
           </div>
         )}
 
-        {/* High-fidelity prototype video */}
+        {/* Prototype / demo video or GIF */}
         {entry.videoUrl && (
           <div className="detail-section">
-            <h3>High-Fidelity Prototype</h3>
-            <video
-              className="prototype-video"
-              src={entry.videoUrl}
-              title={`${entry.title} high-fidelity prototype`}
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+            <h3>{entry.videoTitle || 'High-Fidelity Prototype'}</h3>
+            {/\.gif($|\?)/i.test(entry.videoUrl) ? (
+              <img
+                className="detail-video-player"
+                src={entry.videoUrl}
+                alt={entry.videoAlt || entry.videoTitle || `${entry.title} demo`}
+              />
+            ) : entry.videoControls ? (
+              <video
+                className="detail-video-player"
+                src={entry.videoUrl}
+                title={entry.videoTitle || `${entry.title} demo video`}
+                controls
+                playsInline
+                preload="metadata"
+              />
+            ) : (
+              <video
+                className="prototype-video"
+                src={entry.videoUrl}
+                title={`${entry.title} high-fidelity prototype`}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            )}
+            {entry.videoCaption && (
+              <p className="detail-video-caption">{entry.videoCaption}</p>
+            )}
           </div>
         )}
 
