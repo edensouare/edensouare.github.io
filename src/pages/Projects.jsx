@@ -12,11 +12,11 @@ const previews = {
   'jerry-can-relay': { still: mediaRoot + 'jerry-can-relay.jpg' },
   'access-as-ownership': {
     still: mediaRoot + 'access-as-ownership.png',
-    largeStill: '/assets/aistudio/idHbIlOqaO_8696cccf.jpeg',
+    largeStill: '/assets/logos/idHbIlOqaO_8696cccf.jpeg',
   },
   'comet-bites': { still: mediaRoot + 'comet-bites.webp', animation: mediaRoot + 'comet-bites.gif' },
-  lookism: { still: '/lookismHumanAppearance.jpg' },
-  'meal-hopper': { still: '/assets/aistudio/Logo-removebg-preview_265e765e.png' },
+  lookism: { still: '/images/lookism/lookismHumanAppearance.jpg' },
+  'meal-hopper': { still: '/assets/logos/Logo-removebg-preview_265e765e.png' },
 }
 
 function CardPreview({ slug }) {

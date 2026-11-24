@@ -178,7 +178,7 @@ export default function ProjectDetail({ isResearch = false }) {
                 <details key={i} className="approach-accordion">
                   <summary>
                     <span>{a.heading}</span>
-                    <img className="approach-arrow" src="/down-arrow.png" alt="" aria-hidden="true" />
+                    <img className="approach-arrow" src="/images/ui/down-arrow.png" alt="" aria-hidden="true" />
                   </summary>
                   <div className="approach-accordion-body">
                     <div>

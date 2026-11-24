@@ -337,14 +337,14 @@ export const projects = [
     'I saw an opportunity to design a low-effort, high-impact fix: a scoped change to CoBank\'s shared header and footer, paired with ongoing testing with rural users with disabilities, rather than a full site redesign.',
   ],
   images: [
-    'cobank_souare_utdallas.png',
-    'cobank_souare_utdallas (1).png',
-    'cobank_souare_utdallas (2).png',
-    'cobank_souare_utdallas (3).png',
-    'cobank_souare_utdallas (4).png',
-    'cobank_souare_utdallas (5).png',
-    'cobank_souare_utdallas (6).png',
-    'cobank_souare_utdallas (7).png',
+    'images/access-as-ownership/cobank_souare_utdallas.png',
+    'images/access-as-ownership/cobank_souare_utdallas (1).png',
+    'images/access-as-ownership/cobank_souare_utdallas (2).png',
+    'images/access-as-ownership/cobank_souare_utdallas (3).png',
+    'images/access-as-ownership/cobank_souare_utdallas (4).png',
+    'images/access-as-ownership/cobank_souare_utdallas (5).png',
+    'images/access-as-ownership/cobank_souare_utdallas (6).png',
+    'images/access-as-ownership/cobank_souare_utdallas (7).png',
   ],
   approach: [
   {
@@ -411,7 +411,7 @@ export const projects = [
       'Beyond visibility, there is a quieter barrier: stigma. Students frequently feel embarrassed using campus food resources or are unsure whether they even qualify for support, which keeps them from seeking help even when it\'s available.',
       'We saw an opportunity to design something fast, discreet, and low-stress: a tool that removes the guesswork of finding food rather than adding another app to compare and track.',
     ],
-    images: Array.from({ length: 10 }, (_, index) => `CB${index + 1}.jpg`),
+    images: Array.from({ length: 10 }, (_, index) => `images/comet-bites/CB${index + 1}.jpg`),
     videoUrl: '/cometbites video.mp4',
     approach: [
       {
@@ -469,11 +469,11 @@ export const projects = [
         'This project investigates how different forms of anthropomorphism influence trust, with the goal of informing more responsible and effective human-robot interaction design.',
     ],
     images: [
-      'lookismExperimentDesign.jpg',
-      'lookismRobotDesign.jpg',
-      'lookismControl.jpg',
-      'lookismHumanTrait.jpg',
-      'lookismHumanAppearance.jpg',
+      'images/lookism/lookismExperimentDesign.jpg',
+      'images/lookism/lookismRobotDesign.jpg',
+      'images/lookism/lookismControl.jpg',
+      'images/lookism/lookismHumanTrait.jpg',
+      'images/lookism/lookismHumanAppearance.jpg',
     ],
     approach: [
       {
@@ -537,13 +537,13 @@ export const projects = [
         'By leveraging deep learning, we aim to bridge the gap between neuroscience and computational modeling, enabling faster, data-driven insights into neurodegenerative progression. The ability to accurately distinguish between stages (NonDemented to Moderate) has meaningful implications for treatment planning and patient care.',
     ],
     images: [
-      'MRImethods1.jpg',
-      'MRImethods2.jpg',
-      'MRImethods3.jpg',
-      'MRImethods4.jpg',
-      'MRIresults1.jpg',
-      'MRIresults2.jpg',
-      'MRIresults3.jpg',
+      'images/alzheimers-mri/MRImethods1.jpg',
+      'images/alzheimers-mri/MRImethods2.jpg',
+      'images/alzheimers-mri/MRImethods3.jpg',
+      'images/alzheimers-mri/MRImethods4.jpg',
+      'images/alzheimers-mri/MRIresults1.jpg',
+      'images/alzheimers-mri/MRIresults2.jpg',
+      'images/alzheimers-mri/MRIresults3.jpg',
     ],
     approach: [
   {
@@ -601,7 +601,15 @@ export const projects = [
       'However, existing platforms often fragment the grocery experience, lacking real-time inventory visibility and seamless planning tools.',
       'Meal Hopper was designed to streamline this process—connecting users with local stores while simplifying how they browse, plan, and receive groceries.'
     ],
-    images: ['MH1.jpg','MH2.jpg','MH3.jpg','MH4.jpg','MH5.jpg','MH6.jpg','MH7.jpg'],
+    images: [
+      'images/meal-hopper/MH1.jpg',
+      'images/meal-hopper/MH2.jpg',
+      'images/meal-hopper/MH3.jpg',
+      'images/meal-hopper/MH4.jpg',
+      'images/meal-hopper/MH5.jpg',
+      'images/meal-hopper/MH6.jpg',
+      'images/meal-hopper/MH7.jpg',
+    ],
     approach: [
       { heading: 'User-Centered Requirements', text: 'Defined key features including real-time inventory, personalized lists, and delivery tracking.' },
       { heading: 'Scenario-Based Design', text: 'Developed use cases ranging from weekly family shopping to recurring professional orders.' },
@@ -630,7 +638,16 @@ export const projects = [
       'Audio is inherently complex. Once mixed, individual components like vocals, drums, and bass become difficult to isolate. Yet creators increasingly demand more control over sound for remixing, editing, and creative exploration.',
       'Seppit was built to address this challenge: enabling users to break down audio tracks into individual stems, opening new possibilities for manipulation and recomposition.',
     ],
-    images: ['Seppit1.jpg','Seppit2.jpg','Seppit3.jpg','Seppit4.jpg','Seppit5.jpg','Seppit6.jpg','Seppit7.jpg','Seppit8.jpg'],
+    images: [
+      'images/seppit/Seppit1.jpg',
+      'images/seppit/Seppit2.jpg',
+      'images/seppit/Seppit3.jpg',
+      'images/seppit/Seppit4.jpg',
+      'images/seppit/Seppit5.jpg',
+      'images/seppit/Seppit6.jpg',
+      'images/seppit/Seppit7.jpg',
+      'images/seppit/Seppit8.jpg',
+    ],
     approach: [
   {
     heading: 'Audio-as-Image Framework',
@@ -728,7 +745,7 @@ export const research = [
       'As conversational agents increasingly provide support, designing them without considering age-specific differences risks misalignment and reduced effectiveness.',
       'This research investigates how communication style, credibility, and emotional tone should adapt across developmental stages.'
     ],
-    images: ['Research Poster.jpg'],
+    images: ['images/conversational-agents/Research Poster.jpg'],
     links: [
       { label: 'Research Paper', href: 'https://docs.google.com/document/d/1-uk72wUPSOmMh_oQozi3_pKNSLfIyroS/edit?usp=sharing&ouid=116134093223350808188&rtpof=true&sd=true' }
     ],
@@ -749,7 +766,12 @@ export const research = [
       'Advised by Leonardo W Estevez',
     ],
     motivation: ['Finding academic program information should be intuitive, but many university websites create friction, slowing decision-making and reducing engagement.', 'This project focuses on optimizing how users navigate the UTD website to locate graduate program requirements, with the broader goal of improving accessibility and increasing enrollment.'],
-    images: ['XCEL1.jpg','XCEL2.jpg','XCEL3.jpg','XCEL4.jpg'],
+    images: [
+      'images/xcel-solutions/XCEL1.jpg',
+      'images/xcel-solutions/XCEL2.jpg',
+      'images/xcel-solutions/XCEL3.jpg',
+      'images/xcel-solutions/XCEL4.jpg',
+    ],
     approach: [
       { heading: 'Research Design', text: 'Conducted A/B testing comparing desktop and mobile interfaces.' },
       { heading: 'Metrics', text: 'Measured task success, completion time, and user familiarity.' },
