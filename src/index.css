@@ -92,6 +92,23 @@ body {
 
 .nav-item:hover { color: var(--text-main); }
 
+.nav-menu .nav-item.active,
+.nav-menu .nav-item[aria-current="page"] {
+  background-color: transparent;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.95) 18%, rgba(185, 193, 202, 0.82) 58%, rgba(105, 116, 129, 0.32) 78%, transparent 80%);
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 5px 0 #7FC8F8, inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  color: var(--text-main);
+  padding: 0.08em 0.32em;
+  margin: 8px 0;
+}
+
+.nav-menu .nav-item.active:hover,
+.nav-menu .nav-item[aria-current="page"]:hover {
+  color: var(--text-main);
+}
+
 .content-area { flex: 1; }
 .layout-wrapper > .content-area { padding-top: 68px; }
 
