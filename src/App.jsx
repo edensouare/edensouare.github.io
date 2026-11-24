@@ -47,7 +47,7 @@ export default function App() {
           {/* Legacy fallbacks from old static pages */}
           <Route path="/lookism.html" element={<Navigate to="/projects/lookism" replace />} />
           <Route path="/alzheimers-mri.html" element={<Navigate to="/projects/alzheimers-mri" replace />} />
-          <Route path="/meal-hopper.html" element={<Navigate to="/projects/meal-hopper" replace />} />
+          {/* <Route path="/meal-hopper.html" element={<Navigate to="/projects/meal-hopper" replace />} /> */}
           <Route path="/text-classification.html" element={<Navigate to="/research/text-classification" replace />} />
           <Route path="/conversational-agents.html" element={<Navigate to="/research/conversational-agents" replace />} />
           <Route path="/xcel-solutions.html" element={<Navigate to="/research/xcel-solutions" replace />} />

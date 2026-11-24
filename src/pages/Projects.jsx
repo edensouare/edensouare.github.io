@@ -16,7 +16,7 @@ const previews = {
   },
   'comet-bites': { still: mediaRoot + 'comet-bites.webp', animation: mediaRoot + 'comet-bites.gif' },
   lookism: { still: '/images/lookism/lookismHumanAppearance.jpg' },
-  'meal-hopper': { still: '/assets/logos/Logo-removebg-preview_265e765e.png' },
+  // 'meal-hopper': { still: '/assets/logos/Logo-removebg-preview_265e765e.png' },
 }
 
 function CardPreview({ slug }) {

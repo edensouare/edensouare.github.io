@@ -590,6 +590,7 @@ export const projects = [
   },
 ],
   },
+  /*
   {
     slug: 'meal-hopper',
     title: 'Meal Hopper',
@@ -620,6 +621,7 @@ export const projects = [
       { heading: 'Final Specification', text: 'Established consistent design patterns and system behaviors to support scalable implementation.' },
     ],
   },
+  */
   {
     slug: 'seppit',
     title: 'Seppit',
