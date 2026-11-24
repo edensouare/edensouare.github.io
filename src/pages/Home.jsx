@@ -75,9 +75,9 @@ export default function Home() {
               ★ UX & Web Development standards used in real-world front-end and client-facing projects. Check out my <span className="first-place-tilt">first place</span> submission <a href="https://edensouare.github.io/projects/access-as-ownership" target="_blank" rel="noreferrer">Access as Ownership</a> for CoBank's® Early Talent Competition.
             </p>
             <p>
-              ★ More WebDev...here are my unoffical w.i.p.'s for Intel® Sustainability:{' '}
-              <a href="https://edensouare.github.io/02-prj-intel-sustainability/" target="_blank" rel="noreferrer">Sustainability Timeline</a> and{' '}
-              <a href="https://edensouare.github.io/05-prj-intel-event-check-in/" target="_blank" rel="noreferrer">Sustainability Summit Check-In</a>
+              ★ More WebDev...check out my recent builds for{' '}
+              <Link to="/projects/nasa-space-explorer">NASA Space Explorer</Link> and{' '}
+              <Link to="/projects/loreal-beauty-advisor">L’Oréal Beauty Advisor &amp; Routine Builder</Link>.
             </p>
             <p>★ Interfaces that can communicate dense information while maintaining visual & aesthetic appeal</p>
             <p>...This space will keep changing as new experiments and ideas find their way in.</p>
@@ -89,6 +89,7 @@ export default function Home() {
             <h2>Site Updates</h2>
             <p>Currently applying inclusive design practices, responsive layouts, and accessibility standards to this site.</p>
             <ul>
+              <li>Added GIFs to the Projects page and added more projects</li>
               <li>Added carousel components to consolidate images in each Project and Research page</li>
               <li>Added accordion components to improve readability of Approach sections</li>
             </ul>

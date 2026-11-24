@@ -7,11 +7,11 @@ export default function Layout({ children }) {
 
   return (
     <div className="layout-wrapper">
-      <Link className="welcome-back-button" to="/" aria-label="Back to Welcome Menu">
-        ← Welcome Menu
-      </Link>
-
       <aside className="sidebar" aria-label="Site navigation">
+        <Link className="welcome-back-button" to="/" aria-label="Back to Welcome Menu">
+          ← Welcome Menu
+        </Link>
+
         <header className="profile-top">
           <h1>Eden Souare</h1>
           <p className="text-muted">Exploring UX, HCI, and ML | Texas & New York, USA</p>
