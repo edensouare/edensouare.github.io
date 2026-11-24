@@ -205,6 +205,7 @@ export const projects = [
       { label: 'Try the Routine Builder', href: 'https://edensouare.github.io/09-prj-loreal-routine-builder/' },
        ],
   },
+  /*
   {
     slug: 'jerry-can-relay',
     title: 'Jerry Can Relay',
@@ -255,6 +256,7 @@ export const projects = [
       { label: 'Play Jerry Can Relay', href: 'https://edensouare.github.io/05-charity-water-game-prototype/' },
     ],
   },
+  */
   {
     slug: 'intel-sustainability',
     title: 'Intel Sustainability',

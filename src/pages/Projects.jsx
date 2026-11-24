@@ -9,7 +9,7 @@ const previews = {
   'intel-sustainability': { still: mediaRoot + 'intel-sustainability.webp', animation: mediaRoot + 'intel-sustainability.gif' },
   'alzheimers-mri': { still: mediaRoot + 'alzheimers-mri.webp', animation: mediaRoot + 'alzheimers-mri.gif' },
   'seppit': { still: mediaRoot + 'seppit.webp', animation: mediaRoot + 'seppit.gif' },
-  'jerry-can-relay': { still: mediaRoot + 'jerry-can-relay.jpg' },
+  // 'jerry-can-relay': { still: mediaRoot + 'jerry-can-relay.jpg' },
   'access-as-ownership': {
     still: mediaRoot + 'access-as-ownership.png',
     largeStill: '/assets/logos/idHbIlOqaO_8696cccf.jpeg',
